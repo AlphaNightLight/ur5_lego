@@ -1,3 +1,6 @@
 [submodule "task_planner"]
 	path = task_planner
 	url = https://github.com/AlphaNightLight/task_planner
+[submodule "motion_planner_ur5"]
+	path = motion_planner_ur5
+	url = https://github.com/kikalore/motion_planner_ur5
