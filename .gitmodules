@@ -4,3 +4,9 @@
 [submodule "motion_planner_ur5"]
 	path = src/motion_planner_ur5
 	url = git@github.com:kikalore/motion_planner_ur5.git
+[submodule "src/pointcloud"]
+	path = src/pointcloud
+	url = git@github.com:yksop/pointcloud.git
+[submodule "src/mega_blocks_detector_project"]
+	path = src/mega_blocks_detector_project
+	url = git@github.com:AlbertoDB20/mega_blocks_detector_project.git
