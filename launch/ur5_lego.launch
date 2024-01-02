@@ -1,2 +1,26 @@
 <launch>
+  <include file="$(find ur5_lego)/launch/ur5_lego_single_group.launch" >
+    <arg name="group_name" value="group_1" />
+    <arg name="server_py" value="false" />
+    <arg name="client_py" value="false" />
+  </include>
+
+  <include file="$(find ur5_lego)/launch/ur5_lego_single_group.launch" >
+    <arg name="group_name" value="group_2" />
+    <arg name="server_py" value="true" />
+    <arg name="client_py" value="false" />
+  </include>
+
+  <include file="$(find ur5_lego)/launch/ur5_lego_single_group.launch" >
+    <arg name="group_name" value="group_3" />
+    <arg name="server_py" value="false" />
+    <arg name="client_py" value="true" />
+  </include>
+
+  <include file="$(find ur5_lego)/launch/ur5_lego_single_group.launch" >
+    <arg name="group_name" value="group_4" />
+    <arg name="server_py" value="true" />
+    <arg name="client_py" value="true" />
+  </include>
+
 </launch>
