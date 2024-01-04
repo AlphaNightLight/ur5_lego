@@ -11,6 +11,7 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
+  geometry_msgs
   message_generation
 )
 
@@ -50,14 +51,16 @@ find_package(catkin REQUIRED COMPONENTS
 ## Generate messages in the 'msg' folder
 add_message_files(
   FILES
-  Point2D.msg
-  PointArray.msg
+  TargetPose.msg
+  BoundingBox.msg
 )
 
 ## Generate services in the 'srv' folder
 add_service_files(
   FILES
-  Vectorize.srv
+  GetBoundingBoxes.srv
+  BoundingBoxesToPoses.srv
+  MoveBlock.srv
 )
 
 ## Generate actions in the 'action' folder
@@ -71,6 +74,7 @@ add_service_files(
 generate_messages(
   DEPENDENCIES
   std_msgs
+  geometry_msgs
 )
 
 ################################################
@@ -105,7 +109,7 @@ generate_messages(
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES ur5_lego
-  CATKIN_DEPENDS roscpp rospy std_msgs message_runtime
+  CATKIN_DEPENDS roscpp rospy std_msgs geometry_msgs message_runtime
 #  DEPENDS system_lib
 )
 
@@ -139,9 +143,9 @@ add_executable(task_planner src/task_planner/task_planner.cpp)
 target_link_libraries(task_planner ${catkin_LIBRARIES})
 add_dependencies(task_planner ur5_lego_gencpp)
 
-add_executable(task_server_example src/task_planner/task_server_example.cpp)
-target_link_libraries(task_server_example ${catkin_LIBRARIES})
-add_dependencies(task_server_example ur5_lego_gencpp)
+add_executable(motion_planner src/task_planner/motion_planner.cpp)
+target_link_libraries(motion_planner ${catkin_LIBRARIES})
+add_dependencies(motion_planner ur5_lego_gencpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -168,8 +172,8 @@ add_dependencies(task_server_example ur5_lego_gencpp)
 ## Mark executable scripts (Python etc.) for installation
 ## in contrast to setup.py, you can choose the destination
 catkin_install_python(PROGRAMS
-  src/task_planner/py_task_planner.py
-  src/task_planner/py_task_server_example.py
+  src/task_planner/vision_node.py
+  src/task_planner/pointcloud_node.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 

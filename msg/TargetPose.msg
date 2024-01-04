@@ -1,0 +1,4 @@
+string label
+geometry_msgs/Vector3 position
+geometry_msgs/Quaternion orientation
+geometry_msgs/Vector3 euler

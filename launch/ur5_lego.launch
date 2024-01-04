@@ -1,26 +1,9 @@
 <launch>
-  <include file="$(find ur5_lego)/launch/ur5_lego_single_group.launch" >
-    <arg name="group_name" value="group_1" />
-    <arg name="server_py" value="false" />
-    <arg name="client_py" value="false" />
-  </include>
+  <group ns="ur5_lego">
+    <node pkg="ur5_lego" type="vision_node.py" name="vision_node" output="screen"/>
+    <node pkg="ur5_lego" type="pointcloud_node.py" name="pointcloud_node" output="screen"/>
 
-  <include file="$(find ur5_lego)/launch/ur5_lego_single_group.launch" >
-    <arg name="group_name" value="group_2" />
-    <arg name="server_py" value="true" />
-    <arg name="client_py" value="false" />
-  </include>
-
-  <include file="$(find ur5_lego)/launch/ur5_lego_single_group.launch" >
-    <arg name="group_name" value="group_3" />
-    <arg name="server_py" value="false" />
-    <arg name="client_py" value="true" />
-  </include>
-
-  <include file="$(find ur5_lego)/launch/ur5_lego_single_group.launch" >
-    <arg name="group_name" value="group_4" />
-    <arg name="server_py" value="true" />
-    <arg name="client_py" value="true" />
-  </include>
-
+    <node pkg="ur5_lego" type="motion_planner" name="motion_planner" output="screen"/>
+    <node pkg="ur5_lego" type="task_planner" name="task_planner" output="screen"/>
+  </group>
 </launch>
