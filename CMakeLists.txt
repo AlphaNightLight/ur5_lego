@@ -62,6 +62,7 @@ add_service_files(
   BoundingBoxesToPoses.srv
   GetDesiredPoses.srv
   MoveBlock.srv
+  MoveRobot.srv
 )
 
 ## Generate actions in the 'action' folder
@@ -147,6 +148,10 @@ add_dependencies(task_planner ur5_lego_gencpp)
 add_executable(motion_planner src/task_planner/motion_planner.cpp)
 target_link_libraries(motion_planner ${catkin_LIBRARIES})
 add_dependencies(motion_planner ur5_lego_gencpp)
+
+add_executable(robot_controller src/task_planner/robot_controller.cpp)
+target_link_libraries(robot_controller ${catkin_LIBRARIES})
+add_dependencies(robot_controller ur5_lego_gencpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
