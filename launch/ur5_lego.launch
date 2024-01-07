@@ -1,9 +1,15 @@
 <launch>
+  <param name="debug_mode" type="bool" value="true"/>
+  <param name="joint_size" type="int" value="8"/>
+  <param name="max_angular_speed" type="double" value="0.31419526535"/> <!-- PI/10 rad/s -->
+  <param name="update_rate" type="double" value="1000.0"/>
+
   <group ns="ur5_lego">
     <node pkg="ur5_lego" type="vision_node.py" name="vision_node" output="screen"/>
     <node pkg="ur5_lego" type="pointcloud_node.py" name="pointcloud_node" output="screen"/>
     <node pkg="ur5_lego" type="desired_poses_node.py" name="desired_poses_node" output="screen"/>
 
+    <node pkg="ur5_lego" type="robot_controller" name="robot_controller" output="screen"/>
     <node pkg="ur5_lego" type="motion_planner" name="motion_planner" output="screen"/>
     <node pkg="ur5_lego" type="task_planner" name="task_planner" output="screen"/>
   </group>
