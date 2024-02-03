@@ -136,10 +136,6 @@ include_directories(
 ## either from message generation or dynamic reconfigure
 # add_dependencies(${PROJECT_NAME} ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
-## Declare a C++ executable
-## With catkin_make all packages are built within a single CMake context
-## The recommended prefix ensures that target names across packages don't collide
-# add_executable(${PROJECT_NAME}_node src/ur5_lego_node.cpp)
 
 add_executable(task_planner src/task_planner/task_planner.cpp)
 target_link_libraries(task_planner ${catkin_LIBRARIES})
@@ -153,20 +149,11 @@ add_executable(robot_controller src/task_planner/robot_controller.cpp)
 target_link_libraries(robot_controller ${catkin_LIBRARIES})
 add_dependencies(robot_controller ur5_lego_gencpp)
 
-## Rename C++ executable without prefix
-## The above recommended prefix causes long target names, the following renames the
-## target back to the shorter version for ease of user use
-## e.g. "rosrun someones_pkg node" instead of "rosrun someones_pkg someones_pkg_node"
-# set_target_properties(${PROJECT_NAME}_node PROPERTIES OUTPUT_NAME node PREFIX "")
-
-## Add cmake target dependencies of the executable
-## same as for the library above
-# add_dependencies(${PROJECT_NAME}_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-
-## Specify libraries to link a library or executable target against
-# target_link_libraries(${PROJECT_NAME}_node
-#   ${catkin_LIBRARIES}
-# )
+install(TARGETS robot_controller   motion_planner  task_planner
+  ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+  LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+  RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
 
 #############
 ## Install ##
@@ -174,7 +161,7 @@ add_dependencies(robot_controller ur5_lego_gencpp)
 
 # all install targets should use catkin DESTINATION variables
 # See http://ros.org/doc/api/catkin/html/adv_user_guide/variables.html
-
+#catkin_python_setup()
 ## Mark executable scripts (Python etc.) for installation
 ## in contrast to setup.py, you can choose the destination
 catkin_install_python(PROGRAMS
@@ -183,6 +170,9 @@ catkin_install_python(PROGRAMS
   src/task_planner/desired_poses_node.py
   src/task_planner/ur5_generic.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+  # ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+  # LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+  # RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
 ## Mark executables for installation

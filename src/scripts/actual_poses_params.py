@@ -15,16 +15,16 @@ z_offset = 0.87
 
 # Set here your actual poses
 actual_poses.append(ActualPose2D( label = "X1-Y1-Z2", x = 0.1, y = 0.2, theta = 0 ))
-actual_poses.append(ActualPose2D( label = "X1-Y2-Z1", x = 0.1, y = 0.3, theta = PI/6 ))
+#actual_poses.append(ActualPose2D( label = "X1-Y2-Z1", x = 0.1, y = 0.3, theta = PI/6 ))
 actual_poses.append(ActualPose2D( label = "X1-Y2-Z2", x = 0.1, y = 0.4, theta = PI/4 ))
-actual_poses.append(ActualPose2D( label = "X1-Y2-Z2-CHAMFER", x = 0.2, y = 0.2, theta = PI/3 ))
-actual_poses.append(ActualPose2D( label = "X1-Y2-Z2-TWINFILLET", x = 0.2, y = 0.3, theta = PI/2 ))
-actual_poses.append(ActualPose2D( label = "X1-Y3-Z2", x = 0.2, y = 0.4, theta = -PI/6 ))
-actual_poses.append(ActualPose2D( label = "X1-Y3-Z2-FILLET", x = 0.3, y = 0.2, theta = -PI/4 ))
-actual_poses.append(ActualPose2D( label = "X1-Y4-Z1", x = 0.3, y = 0.3, theta = -PI/3 ))
-actual_poses.append(ActualPose2D( label = "X1-Y4-Z2", x = 0.3, y = 0.4, theta = -PI/2 ))
-actual_poses.append(ActualPose2D( label = "X2-Y2-Z2", x = 0.4, y = 0.2, theta = PI ))
-actual_poses.append(ActualPose2D( label = "X2-Y2-Z2-FILLET", x = 0.4, y = 0.3, theta = 0 ))
+#actual_poses.append(ActualPose2D( label = "X1-Y2-Z2-CHAMFER", x = 0.2, y = 0.2, theta = PI/3 ))
+#actual_poses.append(ActualPose2D( label = "X1-Y2-Z2-TWINFILLET", x = 0.2, y = 0.3, theta = PI/2 ))
+#actual_poses.append(ActualPose2D( label = "X1-Y3-Z2", x = 0.2, y = 0.4, theta = -PI/6 ))
+#actual_poses.append(ActualPose2D( label = "X1-Y3-Z2-FILLET", x = 0.3, y = 0.2, theta = -PI/4 ))
+#actual_poses.append(ActualPose2D( label = "X1-Y4-Z1", x = 0.3, y = 0.3, theta = -PI/3 ))
+#actual_poses.append(ActualPose2D( label = "X1-Y4-Z2", x = 0.3, y = 0.4, theta = -PI/2 ))
+#actual_poses.append(ActualPose2D( label = "X2-Y2-Z2", x = 0.4, y = 0.2, theta = PI ))
+#actual_poses.append(ActualPose2D( label = "X2-Y2-Z2-FILLET", x = 0.4, y = 0.3, theta = 0 ))
 
 
 
