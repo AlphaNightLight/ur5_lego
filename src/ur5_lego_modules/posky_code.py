@@ -1,1 +1,1 @@
-../pointcloud/pose_finder.py
+../pointcloud/script.py

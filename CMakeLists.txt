@@ -3,10 +3,13 @@ project(ur5_lego)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 add_compile_options(-std=c++11)
+find_package(Eigen3 REQUIRED)
+#set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -nostartfiles -g")
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
+
 find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
@@ -109,11 +112,12 @@ generate_messages(
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
-#  INCLUDE_DIRS include
-#  LIBRARIES ur5_lego
+  INCLUDE_DIRS include
+  LIBRARIES ${PROJECT_NAME}
   CATKIN_DEPENDS roscpp rospy std_msgs geometry_msgs message_runtime
 #  DEPENDS system_lib
 )
+
 
 ###########
 ## Build ##
@@ -122,14 +126,25 @@ catkin_package(
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
 include_directories(
-# include
+  include
   ${catkin_INCLUDE_DIRS}
+  ${Eigen_INCLUDE_DIRS}
+  ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
 
 ## Declare a C++ library
-# add_library(${PROJECT_NAME}
-#   src/${PROJECT_NAME}/ur5_lego.cpp
-# )
+add_library(${PROJECT_NAME}
+  src/motion_planner_ur5/motion_planner.cpp
+)
+target_link_libraries(${PROJECT_NAME} ${catkin_LIBRARIES})
+
+
+
+#add_executable(motion_planner_fede src/motion_planner_ur5/motion_planner.cpp)
+#target_link_libraries(motion_planner_fede ${catkin_LIBRARIES} ${Eigen_LIBRARIES})
+
+#target_include_directories(motion_planner_fede PRIVATE include ${catkin_INCLUDE_DIRS} ${Eigen_INCLUDE_DIRS})
+#add_dependencies(motion_planner_fede ur5_lego_gencpp)
 
 ## Add cmake target dependencies of the library
 ## as an example, code may need to be generated before libraries
@@ -149,11 +164,19 @@ add_executable(robot_controller src/task_planner/robot_controller.cpp)
 target_link_libraries(robot_controller ${catkin_LIBRARIES})
 add_dependencies(robot_controller ur5_lego_gencpp)
 
-install(TARGETS robot_controller   motion_planner  task_planner
+install(
+  TARGETS robot_controller motion_planner task_planner ${PROJECT_NAME}
   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
+
+install(
+  DIRECTORY include/${PROJECT_NAME}/
+  DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
+)
+
+
 
 #############
 ## Install ##
