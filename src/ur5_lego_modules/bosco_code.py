@@ -1,1 +1,1 @@
-../mega_blocks_detector_project/code/custom_model.py
+../mega_blocks_detector_project/code/custom_model_ros.py
