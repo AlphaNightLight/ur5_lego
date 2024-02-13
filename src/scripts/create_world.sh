@@ -43,4 +43,4 @@ else
 	fi
 fi
 
-#python3 load_blocks.py
+python3 load_blocks.py
