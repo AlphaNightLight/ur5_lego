@@ -1,0 +1,44 @@
+\hypertarget{namespacedocumentation}{}\doxysection{documentation Namespace Reference}
+\label{namespacedocumentation}\index{documentation@{documentation}}
+
+
+Script for fine-\/tuning in python using ultralytics Y\+O\+LO v8 pre-\/trained model.  
+
+
+
+
+\doxysubsection{Detailed Description}
+Script for fine-\/tuning in python using ultralytics Y\+O\+LO v8 pre-\/trained model. 
+
+\begin{DoxyDate}{Date}
+1/12/2023 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Alberto Dal Bosco 
+\end{DoxyAuthor}
+\hypertarget{namespacedocumentation_Notes}{}\doxysubsection{Notes}\label{namespacedocumentation_Notes}
+We choose Y\+O\+L\+Ov8n because is the lightest one, but it is also possible to chose another version of Y\+O\+L\+Ov8
+
+TO DO B\+E\+F\+O\+RE C\+O\+M\+P\+I\+L\+I\+NG\+: pip install ultralytics pip install torch
+
+F\+R\+OM R\+E\+F\+E\+R\+E\+N\+CE we have\+: \begin{DoxyVerb}from ultralytics import YOLO
+
+# Load a YOLOv8 model from a pre-trained weights file
+model = YOLO('yolov8n.pt')
+
+# Run MODE mode using the custom arguments ARGS (guess TASK)
+model.MODE(ARGS)
+\end{DoxyVerb}
+
+
+Where\+:
+
+T\+A\+SK (optional) is one of (detect, segment, classify, pose) M\+O\+DE (required) is one of (train, val, predict, export, track) A\+R\+GS (optional) are arg=value pairs like imgsz=640 that override defaults. Default A\+RG values are defined on this page from the cfg/defaults.\+yaml file.
+
+I also check if M\+PS is available to be sure to use Apple Neural Engine for M1 processor. \mbox{[} Apple\textquotesingle{}s Neural Engine (A\+NE) is the marketing name for a group of specialized cores functioning as a neural processing unit (N\+PU) dedicated to the acceleration of artificial intelligence operations and machine learning tasks. \mbox{]} source\+: Apple
+
+N.\+B.\+: Train\+Yolov8\+Custom\+Dataset.\+ipynb on google Colab selecting \textquotesingle{}Modifica\textquotesingle{} -\/-\/$>$ \textquotesingle{}Impostazioni blocco Note\textquotesingle{} -\/-\/$>$ \textquotesingle{}Acceleratore Hardware\textquotesingle{} -\/-\/$>$ T4 G\+PU -\/-\/$>$ \textquotesingle{}Salva\textquotesingle{}
+
+The first choice train c\+NN on your device (V\+E\+RY V\+E\+RY S\+L\+OW and H\+E\+A\+VY) The second one is faster and less computational for the device, but needs stable internet connection!
+
+A\+F\+T\+ER\+: custom\+\_\+model.\+py to use the trained model in real environment 

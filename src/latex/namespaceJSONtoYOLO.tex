@@ -1,0 +1,307 @@
+\hypertarget{namespaceJSONtoYOLO}{}\doxysection{J\+S\+O\+Nto\+Y\+O\+LO Namespace Reference}
+\label{namespaceJSONtoYOLO}\index{JSONtoYOLO@{JSONtoYOLO}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespaceJSONtoYOLO_a16e34e60cfc70efe653b052f6b920b49}{convert\+\_\+id\+\_\+to\+\_\+num}} (id)
+\begin{DoxyCompactList}\small\item\em Function that covert litteral I\+Ds to numbers. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespaceJSONtoYOLO_ac44331778cc956d92ab8c993154bbdf0}{sebe\+\_\+to\+\_\+yolo}} (ulc, drc, w, h)
+\begin{DoxyCompactList}\small\item\em Function that convert Sebe annotations to Yolo compatible ones. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespaceJSONtoYOLO_a1db12d30a8403d8baf3f6d2aa0b54f67}{find\+\_\+extreme\+\_\+coordinates}} (lista\+\_\+coordinate)
+\begin{DoxyCompactList}\small\item\em Function that find 2D bb given 3D bb. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespaceJSONtoYOLO_a3088c583251f061824e3e6a59f5e19d5}{create\+\_\+txt\+\_\+annotation}} (path\+\_\+json, path\+\_\+txt\+\_\+folder)
+\begin{DoxyCompactList}\small\item\em Function that create txt annotation in the form img\+\_\+\+::num\+\_\+label.\+txt. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespaceJSONtoYOLO_afccf3f17e17da7b223dfdd1a720ae479}{save\+\_\+img}} (img\+\_\+file\+\_\+path, path\+\_\+to\+\_\+images)
+\begin{DoxyCompactList}\small\item\em Function to save image in .jpg extension. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespaceJSONtoYOLO_a6f2e2526f729721459fb420108bd6f53}\label{namespaceJSONtoYOLO_a6f2e2526f729721459fb420108bd6f53}} 
+string {\bfseries path\+\_\+to\+\_\+project\+\_\+folder} = \char`\"{}/Users/alberto/R\+O\+B\+O\+T\+I\+CS/autovelox\+\_\+detector\+\_\+project\char`\"{}
+\item 
+\mbox{\Hypertarget{namespaceJSONtoYOLO_ace0eabc7a53c5054b62b35400f427b07}\label{namespaceJSONtoYOLO_ace0eabc7a53c5054b62b35400f427b07}} 
+string {\bfseries path\+\_\+to\+\_\+assigns\+\_\+folder} = path\+\_\+to\+\_\+project\+\_\+folder + \char`\"{}/assigns\char`\"{}
+\item 
+\mbox{\Hypertarget{namespaceJSONtoYOLO_ac68b8f31e6285db02bd358605fc32d8b}\label{namespaceJSONtoYOLO_ac68b8f31e6285db02bd358605fc32d8b}} 
+string {\bfseries path\+\_\+to\+\_\+data\+\_\+folder} = path\+\_\+to\+\_\+project\+\_\+folder + \char`\"{}/data\char`\"{}
+\item 
+\mbox{\Hypertarget{namespaceJSONtoYOLO_a0a52da37a12af3d7486ed73e220b1b50}\label{namespaceJSONtoYOLO_a0a52da37a12af3d7486ed73e220b1b50}} 
+string {\bfseries path\+\_\+to\+\_\+code\+\_\+folder} = path\+\_\+to\+\_\+project\+\_\+folder + \char`\"{}/code\char`\"{}
+\item 
+\mbox{\Hypertarget{namespaceJSONtoYOLO_a5192c48c67077ba79caa0dd10d90fadf}\label{namespaceJSONtoYOLO_a5192c48c67077ba79caa0dd10d90fadf}} 
+string {\bfseries path\+\_\+to\+\_\+images\+\_\+folder} = path\+\_\+to\+\_\+data\+\_\+folder + \char`\"{}/images\char`\"{}
+\item 
+\mbox{\Hypertarget{namespaceJSONtoYOLO_a71058452fab835061a07a1e511c95346}\label{namespaceJSONtoYOLO_a71058452fab835061a07a1e511c95346}} 
+string {\bfseries path\+\_\+to\+\_\+labels\+\_\+folder} = path\+\_\+to\+\_\+data\+\_\+folder + \char`\"{}/labels\char`\"{}
+\item 
+\mbox{\Hypertarget{namespaceJSONtoYOLO_a7141f868e85d22c28ef9d4ecb2440c1c}\label{namespaceJSONtoYOLO_a7141f868e85d22c28ef9d4ecb2440c1c}} 
+string {\bfseries path\+\_\+to\+\_\+videos\+\_\+folder} = path\+\_\+to\+\_\+data\+\_\+folder + \char`\"{}/videos\char`\"{}
+\item 
+\mbox{\Hypertarget{namespaceJSONtoYOLO_ac4f839997a64a018b961900ce0fb7199}\label{namespaceJSONtoYOLO_ac4f839997a64a018b961900ce0fb7199}} 
+string {\bfseries path\+\_\+to\+\_\+images\+\_\+train\+\_\+folder} = path\+\_\+to\+\_\+images\+\_\+folder + \char`\"{}/train\char`\"{}
+\item 
+\mbox{\Hypertarget{namespaceJSONtoYOLO_adad6d7b785827032be7040c5480835c1}\label{namespaceJSONtoYOLO_adad6d7b785827032be7040c5480835c1}} 
+string {\bfseries path\+\_\+to\+\_\+images\+\_\+val\+\_\+folder} = path\+\_\+to\+\_\+images\+\_\+folder + \char`\"{}/val\char`\"{}
+\item 
+\mbox{\Hypertarget{namespaceJSONtoYOLO_a18a38a044b275767863675177ae63aa5}\label{namespaceJSONtoYOLO_a18a38a044b275767863675177ae63aa5}} 
+string {\bfseries path\+\_\+to\+\_\+images\+\_\+test\+\_\+folder} = path\+\_\+to\+\_\+images\+\_\+folder + \char`\"{}/test\char`\"{}
+\item 
+\mbox{\Hypertarget{namespaceJSONtoYOLO_a5e545d70dd9bf20eb9fe7c1a8da7ac78}\label{namespaceJSONtoYOLO_a5e545d70dd9bf20eb9fe7c1a8da7ac78}} 
+string {\bfseries path\+\_\+to\+\_\+labels\+\_\+train\+\_\+folder} = path\+\_\+to\+\_\+labels\+\_\+folder + \char`\"{}/train\char`\"{}
+\item 
+\mbox{\Hypertarget{namespaceJSONtoYOLO_af35caf65d2cec615972b1a3fe3c62aa6}\label{namespaceJSONtoYOLO_af35caf65d2cec615972b1a3fe3c62aa6}} 
+string {\bfseries path\+\_\+to\+\_\+labels\+\_\+val\+\_\+folder} = path\+\_\+to\+\_\+labels\+\_\+folder + \char`\"{}/val\char`\"{}
+\item 
+\mbox{\Hypertarget{namespaceJSONtoYOLO_a002d67cc77535e39feef42cd846c61c6}\label{namespaceJSONtoYOLO_a002d67cc77535e39feef42cd846c61c6}} 
+string {\bfseries path\+\_\+to\+\_\+labels\+\_\+test\+\_\+folder} = path\+\_\+to\+\_\+labels\+\_\+folder + \char`\"{}/test\char`\"{}
+\item 
+\mbox{\Hypertarget{namespaceJSONtoYOLO_af4a16f79c5d6ce86064db48f4062559c}\label{namespaceJSONtoYOLO_af4a16f79c5d6ce86064db48f4062559c}} 
+string {\bfseries path\+\_\+to\+\_\+videos\+\_\+\+M\+O\+V\+\_\+folder} = path\+\_\+to\+\_\+videos\+\_\+folder + \char`\"{}/videos\+\_\+\+M\+OV\char`\"{}
+\item 
+\mbox{\Hypertarget{namespaceJSONtoYOLO_af68328317b4f90095e0c07f19d59f495}\label{namespaceJSONtoYOLO_af68328317b4f90095e0c07f19d59f495}} 
+string {\bfseries path\+\_\+to\+\_\+videos\+\_\+\+M\+P4\+\_\+folder} = path\+\_\+to\+\_\+videos\+\_\+folder + \char`\"{}/videos\+\_\+\+M\+P4\char`\"{}
+\item 
+\mbox{\Hypertarget{namespaceJSONtoYOLO_afa587693f5a700989b2064f0f80fa1c8}\label{namespaceJSONtoYOLO_afa587693f5a700989b2064f0f80fa1c8}} 
+string {\bfseries path\+\_\+to\+\_\+frame\+\_\+folder} = path\+\_\+to\+\_\+videos\+\_\+folder + \char`\"{}/frame\char`\"{}
+\item 
+\mbox{\Hypertarget{namespaceJSONtoYOLO_a36a257b02a4c5d4592795743aeb74d3d}\label{namespaceJSONtoYOLO_a36a257b02a4c5d4592795743aeb74d3d}} 
+string {\bfseries img} = \char`\"{}img\+\_\+\char`\"{}
+\item 
+\mbox{\Hypertarget{namespaceJSONtoYOLO_ae5a0f6d240791fa66b745686cbae149c}\label{namespaceJSONtoYOLO_ae5a0f6d240791fa66b745686cbae149c}} 
+string {\bfseries subkey1} = \textquotesingle{}vertices\textquotesingle{}
+\item 
+\mbox{\Hypertarget{namespaceJSONtoYOLO_aa165dd37986a31e91f3b010be5ed7fe3}\label{namespaceJSONtoYOLO_aa165dd37986a31e91f3b010be5ed7fe3}} 
+string {\bfseries subkey2} = \textquotesingle{}bbox\textquotesingle{}
+\item 
+\mbox{\Hypertarget{namespaceJSONtoYOLO_a02b91474a4277d4a1d79f105680a71b1}\label{namespaceJSONtoYOLO_a02b91474a4277d4a1d79f105680a71b1}} 
+string {\bfseries subkey3} = \textquotesingle{}3d\+\_\+bbox\textquotesingle{}
+\item 
+\mbox{\Hypertarget{namespaceJSONtoYOLO_a9a4d55f44698ef3759fe2a27345a9362}\label{namespaceJSONtoYOLO_a9a4d55f44698ef3759fe2a27345a9362}} 
+string {\bfseries subkey4} = \textquotesingle{}3d\+\_\+bbox\+\_\+pixel\+\_\+space\textquotesingle{}
+\item 
+\mbox{\Hypertarget{namespaceJSONtoYOLO_ab6802d65b870d7ce24b50c018def9e22}\label{namespaceJSONtoYOLO_ab6802d65b870d7ce24b50c018def9e22}} 
+string {\bfseries subkey5} = \textquotesingle{}bbox\+\_\+connections\textquotesingle{}
+\item 
+\mbox{\Hypertarget{namespaceJSONtoYOLO_a9f475ad6354921aabddd94b75f1c82dd}\label{namespaceJSONtoYOLO_a9f475ad6354921aabddd94b75f1c82dd}} 
+string {\bfseries subkey6} = \textquotesingle{}camera\+\_\+coordinates\textquotesingle{}
+\item 
+\mbox{\Hypertarget{namespaceJSONtoYOLO_a715f9baefe87fbaad710dc7c80f60278}\label{namespaceJSONtoYOLO_a715f9baefe87fbaad710dc7c80f60278}} 
+string {\bfseries subkey7} = \textquotesingle{}camera\+\_\+matrix\+\_\+world\+\_\+to\+\_\+translation\textquotesingle{}
+\item 
+\mbox{\Hypertarget{namespaceJSONtoYOLO_a25d9916529768257de5c83cb59694507}\label{namespaceJSONtoYOLO_a25d9916529768257de5c83cb59694507}} 
+string {\bfseries subkey8} = \textquotesingle{}camera\+\_\+rotation\+\_\+euler\textquotesingle{}
+\item 
+\mbox{\Hypertarget{namespaceJSONtoYOLO_a197ce2c6a0efa29d96ec80afc56116aa}\label{namespaceJSONtoYOLO_a197ce2c6a0efa29d96ec80afc56116aa}} 
+string {\bfseries subkey9} = \textquotesingle{}y\textquotesingle{}
+\item 
+\mbox{\Hypertarget{namespaceJSONtoYOLO_aaf91cf5be0f2b38f189933fc9aff29f0}\label{namespaceJSONtoYOLO_aaf91cf5be0f2b38f189933fc9aff29f0}} 
+string {\bfseries subkey10} = \textquotesingle{}obj\+\_\+rotation\+\_\+matrix\textquotesingle{}
+\item 
+\mbox{\Hypertarget{namespaceJSONtoYOLO_a565b400a80fab1e6d29d62c4c8d0cfbc}\label{namespaceJSONtoYOLO_a565b400a80fab1e6d29d62c4c8d0cfbc}} 
+string {\bfseries subkey11} = \textquotesingle{}obj\+\_\+translation\+\_\+matrix\textquotesingle{}
+\item 
+\mbox{\Hypertarget{namespaceJSONtoYOLO_aa43540948a30af24b9a55e61fe477e2f}\label{namespaceJSONtoYOLO_aa43540948a30af24b9a55e61fe477e2f}} 
+string {\bfseries id0} = \char`\"{}X1-\/Y1-\/Z2\char`\"{}
+\item 
+\mbox{\Hypertarget{namespaceJSONtoYOLO_a5e9126b17737057c58dc8f69745de13d}\label{namespaceJSONtoYOLO_a5e9126b17737057c58dc8f69745de13d}} 
+string {\bfseries id1} = \textquotesingle{}X1-\/Y2-\/Z1\textquotesingle{}
+\item 
+\mbox{\Hypertarget{namespaceJSONtoYOLO_adb5c874259ec84578f518954307aefdb}\label{namespaceJSONtoYOLO_adb5c874259ec84578f518954307aefdb}} 
+string {\bfseries id2} = \textquotesingle{}X1-\/Y2-\/Z2\textquotesingle{}
+\item 
+\mbox{\Hypertarget{namespaceJSONtoYOLO_a7e9f4fd2b4ac6c043f662ec59c112682}\label{namespaceJSONtoYOLO_a7e9f4fd2b4ac6c043f662ec59c112682}} 
+string {\bfseries id3} = \textquotesingle{}X1-\/Y2-\/Z2-\/C\+H\+A\+M\+F\+ER\textquotesingle{}
+\item 
+\mbox{\Hypertarget{namespaceJSONtoYOLO_a889635bda41fc697e2a6b3bb0c106335}\label{namespaceJSONtoYOLO_a889635bda41fc697e2a6b3bb0c106335}} 
+string {\bfseries id4} = \textquotesingle{}X1-\/Y2-\/Z2-\/T\+W\+I\+N\+F\+I\+L\+L\+ET\textquotesingle{}
+\item 
+\mbox{\Hypertarget{namespaceJSONtoYOLO_a70ccdb51d6f39329f95fe3683845bd9d}\label{namespaceJSONtoYOLO_a70ccdb51d6f39329f95fe3683845bd9d}} 
+string {\bfseries id5} = \textquotesingle{}X1-\/Y3-\/Z2\textquotesingle{}
+\item 
+\mbox{\Hypertarget{namespaceJSONtoYOLO_a1ce05a0a031ae780daf777bd5e5932f3}\label{namespaceJSONtoYOLO_a1ce05a0a031ae780daf777bd5e5932f3}} 
+string {\bfseries id6} = \textquotesingle{}X1-\/Y3-\/Z2-\/F\+I\+L\+L\+ET\textquotesingle{}
+\item 
+\mbox{\Hypertarget{namespaceJSONtoYOLO_adfe08e1df6b40d81b310f5e710f1f775}\label{namespaceJSONtoYOLO_adfe08e1df6b40d81b310f5e710f1f775}} 
+string {\bfseries id7} = \textquotesingle{}X1-\/Y4-\/Z1\textquotesingle{}
+\item 
+\mbox{\Hypertarget{namespaceJSONtoYOLO_a1cdd2ae3aa0d1462fdb60632564b1fa4}\label{namespaceJSONtoYOLO_a1cdd2ae3aa0d1462fdb60632564b1fa4}} 
+string {\bfseries id8} = \textquotesingle{}X1-\/Y4-\/Z2\textquotesingle{}
+\item 
+\mbox{\Hypertarget{namespaceJSONtoYOLO_a751cb7e54cf905f8a9b96af4400cc943}\label{namespaceJSONtoYOLO_a751cb7e54cf905f8a9b96af4400cc943}} 
+string {\bfseries id9} = \textquotesingle{}X2-\/Y2-\/Z2\textquotesingle{}
+\item 
+\mbox{\Hypertarget{namespaceJSONtoYOLO_ac1bb230c4996043489203444ad75c031}\label{namespaceJSONtoYOLO_ac1bb230c4996043489203444ad75c031}} 
+string {\bfseries id10} = \textquotesingle{}X2-\/Y2-\/Z2-\/F\+I\+L\+L\+ET\textquotesingle{}
+\item 
+\mbox{\Hypertarget{namespaceJSONtoYOLO_ad48847055aaf3378ad8edaa0a5859598}\label{namespaceJSONtoYOLO_ad48847055aaf3378ad8edaa0a5859598}} 
+int {\bfseries cont\+\_\+img} = 0
+\item 
+\mbox{\Hypertarget{namespaceJSONtoYOLO_ab765cb74355909f611308dfeed70c1bd}\label{namespaceJSONtoYOLO_ab765cb74355909f611308dfeed70c1bd}} 
+int {\bfseries cont\+\_\+lab} = 0
+\item 
+\mbox{\Hypertarget{namespaceJSONtoYOLO_abda2545c5956605f0ee959b6db17a800}\label{namespaceJSONtoYOLO_abda2545c5956605f0ee959b6db17a800}} 
+list {\bfseries json\+\_\+files} = \mbox{[}$\,$\mbox{]}
+\item 
+\mbox{\Hypertarget{namespaceJSONtoYOLO_afd251649ddd7853013cb32e49831a2a0}\label{namespaceJSONtoYOLO_afd251649ddd7853013cb32e49831a2a0}} 
+list {\bfseries img\+\_\+files} = \mbox{[}$\,$\mbox{]}
+\item 
+\mbox{\Hypertarget{namespaceJSONtoYOLO_aae1a043f40a2494ed1e6ee0a02e17f4a}\label{namespaceJSONtoYOLO_aae1a043f40a2494ed1e6ee0a02e17f4a}} 
+int {\bfseries height} = 1024
+\item 
+\mbox{\Hypertarget{namespaceJSONtoYOLO_ada92d32e0678a91cb7dcd45dc30d2a7f}\label{namespaceJSONtoYOLO_ada92d32e0678a91cb7dcd45dc30d2a7f}} 
+int {\bfseries width} = 1024
+\item 
+\mbox{\Hypertarget{namespaceJSONtoYOLO_a158243bfc108018f5961ad2048946b2f}\label{namespaceJSONtoYOLO_a158243bfc108018f5961ad2048946b2f}} 
+{\bfseries pbar} = tqdm(os.\+listdir(path\+\_\+to\+\_\+assigns\+\_\+folder))
+\item 
+\mbox{\Hypertarget{namespaceJSONtoYOLO_a890cb5849a751b05e59bf6d576785e75}\label{namespaceJSONtoYOLO_a890cb5849a751b05e59bf6d576785e75}} 
+{\bfseries folder\+\_\+path} = os.\+path.\+join(path\+\_\+to\+\_\+assigns\+\_\+folder, folder\+\_\+name)
+\item 
+\mbox{\Hypertarget{namespaceJSONtoYOLO_ad78f8c8553c00416608add3b100af026}\label{namespaceJSONtoYOLO_ad78f8c8553c00416608add3b100af026}} 
+{\bfseries scene\+\_\+path} = os.\+path.\+join(folder\+\_\+path, scene\+\_\+name)
+\item 
+\mbox{\Hypertarget{namespaceJSONtoYOLO_a3c7ceb284a58d7d083be48a9be99e13f}\label{namespaceJSONtoYOLO_a3c7ceb284a58d7d083be48a9be99e13f}} 
+list {\bfseries json\+\_\+path\+\_\+list} = \mbox{[}$\,$\mbox{]}
+\item 
+\mbox{\Hypertarget{namespaceJSONtoYOLO_af69fe47c4f5aeb6b462058265de55140}\label{namespaceJSONtoYOLO_af69fe47c4f5aeb6b462058265de55140}} 
+list {\bfseries img\+\_\+path\+\_\+list} = \mbox{[}$\,$\mbox{]}
+\item 
+\mbox{\Hypertarget{namespaceJSONtoYOLO_ac142cc98e23c6845f0344925df0fbfb8}\label{namespaceJSONtoYOLO_ac142cc98e23c6845f0344925df0fbfb8}} 
+{\bfseries file\+\_\+path} = os.\+path.\+join(scene\+\_\+path, file\+\_\+name)
+\item 
+\mbox{\Hypertarget{namespaceJSONtoYOLO_afacedd64f391755482e31d255ab38e29}\label{namespaceJSONtoYOLO_afacedd64f391755482e31d255ab38e29}} 
+{\bfseries lj} = len(json\+\_\+files)
+\item 
+\mbox{\Hypertarget{namespaceJSONtoYOLO_ac644efe3637addfeae3e657f494a016a}\label{namespaceJSONtoYOLO_ac644efe3637addfeae3e657f494a016a}} 
+{\bfseries li} = len(img\+\_\+files)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}@file JSONtoYOLO.py
+@brief A Python program that convert Sebe dataset to YOLO compatible dataset
+@date   11/11/2023
+@author Alberto Dal Bosco
+@section Notes
+This script takes in input Sebe dataset saved in assigns folder and:
+ 1) move and rename each images in data/images folder
+ 2) read JSON file for each images, elaborate it computing YOLO annotations and save it in renamed .txt 
+        extended file in data/labels folder
+
+LABEL STRUCTURE: 
+Labels for this format should be exported to YOLO format with one *.txt file per image. 
+If there are no objects in an image, no *.txt file is required. 
+The *.txt file should be formatted with one row per object in class x_center y_center width height format. 
+Box coordinates must be in normalized xywh format (from 0 to 1). 
+If your boxes are in pixels, you should divide x_center and width by image width, and y_center and height by image height. 
+Class numbers should be zero-indexed (start with 0).
+
+AFTER: 
+split_dataset.py to randomic split images and labels (set to True SPLIT flag) into three subfolder.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespaceJSONtoYOLO_a16e34e60cfc70efe653b052f6b920b49}\label{namespaceJSONtoYOLO_a16e34e60cfc70efe653b052f6b920b49}} 
+\index{JSONtoYOLO@{JSONtoYOLO}!convert\_id\_to\_num@{convert\_id\_to\_num}}
+\index{convert\_id\_to\_num@{convert\_id\_to\_num}!JSONtoYOLO@{JSONtoYOLO}}
+\doxysubsubsection{\texorpdfstring{convert\_id\_to\_num()}{convert\_id\_to\_num()}}
+{\footnotesize\ttfamily def J\+S\+O\+Nto\+Y\+O\+L\+O.\+convert\+\_\+id\+\_\+to\+\_\+num (\begin{DoxyParamCaption}\item[{}]{id }\end{DoxyParamCaption})}
+
+
+
+Function that covert litteral I\+Ds to numbers. 
+
+\begin{DoxyReturn}{Returns}
+num numerical ID or print error 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespaceJSONtoYOLO_a3088c583251f061824e3e6a59f5e19d5}\label{namespaceJSONtoYOLO_a3088c583251f061824e3e6a59f5e19d5}} 
+\index{JSONtoYOLO@{JSONtoYOLO}!create\_txt\_annotation@{create\_txt\_annotation}}
+\index{create\_txt\_annotation@{create\_txt\_annotation}!JSONtoYOLO@{JSONtoYOLO}}
+\doxysubsubsection{\texorpdfstring{create\_txt\_annotation()}{create\_txt\_annotation()}}
+{\footnotesize\ttfamily def J\+S\+O\+Nto\+Y\+O\+L\+O.\+create\+\_\+txt\+\_\+annotation (\begin{DoxyParamCaption}\item[{}]{path\+\_\+json,  }\item[{}]{path\+\_\+txt\+\_\+folder }\end{DoxyParamCaption})}
+
+
+
+Function that create txt annotation in the form img\+\_\+\+::num\+\_\+label.\+txt. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path\+\_\+json} & path in which is saved the json file \\
+\hline
+{\em path\+\_\+txt\+\_\+folder} & path in which has to be saved converted annotation file with the extension .txt \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespaceJSONtoYOLO_a1db12d30a8403d8baf3f6d2aa0b54f67}\label{namespaceJSONtoYOLO_a1db12d30a8403d8baf3f6d2aa0b54f67}} 
+\index{JSONtoYOLO@{JSONtoYOLO}!find\_extreme\_coordinates@{find\_extreme\_coordinates}}
+\index{find\_extreme\_coordinates@{find\_extreme\_coordinates}!JSONtoYOLO@{JSONtoYOLO}}
+\doxysubsubsection{\texorpdfstring{find\_extreme\_coordinates()}{find\_extreme\_coordinates()}}
+{\footnotesize\ttfamily def J\+S\+O\+Nto\+Y\+O\+L\+O.\+find\+\_\+extreme\+\_\+coordinates (\begin{DoxyParamCaption}\item[{}]{lista\+\_\+coordinate }\end{DoxyParamCaption})}
+
+
+
+Function that find 2D bb given 3D bb. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista\+\_\+coordinate} & list of all the 3D coordinates of a bb \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+punto\+\_\+alto\+\_\+sinistra it is the up left corner of the 3D bb 
+
+punto\+\_\+basso\+\_\+destra it is the down right corner of the 3D bb 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespaceJSONtoYOLO_afccf3f17e17da7b223dfdd1a720ae479}\label{namespaceJSONtoYOLO_afccf3f17e17da7b223dfdd1a720ae479}} 
+\index{JSONtoYOLO@{JSONtoYOLO}!save\_img@{save\_img}}
+\index{save\_img@{save\_img}!JSONtoYOLO@{JSONtoYOLO}}
+\doxysubsubsection{\texorpdfstring{save\_img()}{save\_img()}}
+{\footnotesize\ttfamily def J\+S\+O\+Nto\+Y\+O\+L\+O.\+save\+\_\+img (\begin{DoxyParamCaption}\item[{}]{img\+\_\+file\+\_\+path,  }\item[{}]{path\+\_\+to\+\_\+images }\end{DoxyParamCaption})}
+
+
+
+Function to save image in .jpg extension. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em img\+\_\+file\+\_\+path} & path of the image \\
+\hline
+{\em path\+\_\+to\+\_\+images} & path in which save the images \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespaceJSONtoYOLO_ac44331778cc956d92ab8c993154bbdf0}\label{namespaceJSONtoYOLO_ac44331778cc956d92ab8c993154bbdf0}} 
+\index{JSONtoYOLO@{JSONtoYOLO}!sebe\_to\_yolo@{sebe\_to\_yolo}}
+\index{sebe\_to\_yolo@{sebe\_to\_yolo}!JSONtoYOLO@{JSONtoYOLO}}
+\doxysubsubsection{\texorpdfstring{sebe\_to\_yolo()}{sebe\_to\_yolo()}}
+{\footnotesize\ttfamily def J\+S\+O\+Nto\+Y\+O\+L\+O.\+sebe\+\_\+to\+\_\+yolo (\begin{DoxyParamCaption}\item[{}]{ulc,  }\item[{}]{drc,  }\item[{}]{w,  }\item[{}]{h }\end{DoxyParamCaption})}
+
+
+
+Function that convert Sebe annotations to Yolo compatible ones. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ulc} & up left corner of the bb \\
+\hline
+{\em drc} & down right corner of the bb \\
+\hline
+{\em w} & width of the image \\
+\hline
+{\em h} & height of the image \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+x\+\_\+center\+\_\+normalized x coordinate normalized of the center of bb 
+
+y\+\_\+center\+\_\+normalized y coordinate normalized of the center of bb 
+
+w\+\_\+bb\+\_\+normalized width normalized of the bb 
+
+h\+\_\+bb\+\_\+normalized height normalized of the bb 
+\end{DoxyReturn}

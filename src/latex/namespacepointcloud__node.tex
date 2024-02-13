@@ -1,0 +1,52 @@
+\hypertarget{namespacepointcloud__node}{}\doxysection{pointcloud\+\_\+node Namespace Reference}
+\label{namespacepointcloud__node}\index{pointcloud\_node@{pointcloud\_node}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacepointcloud__node_a15e4d9f7538cef16fe7c545231f03291}{bounding\+\_\+boxes\+\_\+to\+\_\+poses\+\_\+handler}} (req)
+\begin{DoxyCompactList}\small\item\em handler of bounding\+\_\+boxes\+\_\+to\+\_\+poses service, type ur5\+\_\+lego.\+srv.\+Bounding\+Boxes\+To\+Poses It reads image and pointcloud from the camera and passes it together with the bounding boxes to the object\+\_\+detection() function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespacepointcloud__node_a81f71041dc1803575f96682a57eb819f}\label{namespacepointcloud__node_a81f71041dc1803575f96682a57eb819f}} 
+{\bfseries cwd} = os.\+getcwd()
+\item 
+\mbox{\Hypertarget{namespacepointcloud__node_ae40afde9042acea5d68ad87a42e7c306}\label{namespacepointcloud__node_ae40afde9042acea5d68ad87a42e7c306}} 
+string {\bfseries info\+\_\+name} = \char`\"{} \mbox{[}pointcloud\+\_\+node \mbox{]}\+:\char`\"{}
+\item 
+\mbox{\Hypertarget{namespacepointcloud__node_a49c552a1d34601513f25f423015b93ab}\label{namespacepointcloud__node_a49c552a1d34601513f25f423015b93ab}} 
+bool {\bfseries debug\+\_\+mode} = False
+\item 
+\mbox{\Hypertarget{namespacepointcloud__node_afef2019f936e150b9777f2b30ce1ca1e}\label{namespacepointcloud__node_afef2019f936e150b9777f2b30ce1ca1e}} 
+{\bfseries service} = ros.\+Service(\char`\"{}bounding\+\_\+boxes\+\_\+to\+\_\+poses\char`\"{}, Bounding\+Boxes\+To\+Poses, \mbox{\hyperlink{namespacepointcloud__node_a15e4d9f7538cef16fe7c545231f03291}{bounding\+\_\+boxes\+\_\+to\+\_\+poses\+\_\+handler}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}@file pointcloud_node.py
+@brief Ros node that exposes a bounding_boxes_to_poses service of type ur5_lego.srv.BoundingBoxesToPoses
+Thanks to the pointcloud submodule it converts 2D bounding boxes into 3d poses of the blocks.
+@date   04/01/2024
+@author Alex Pegoraro
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacepointcloud__node_a15e4d9f7538cef16fe7c545231f03291}\label{namespacepointcloud__node_a15e4d9f7538cef16fe7c545231f03291}} 
+\index{pointcloud\_node@{pointcloud\_node}!bounding\_boxes\_to\_poses\_handler@{bounding\_boxes\_to\_poses\_handler}}
+\index{bounding\_boxes\_to\_poses\_handler@{bounding\_boxes\_to\_poses\_handler}!pointcloud\_node@{pointcloud\_node}}
+\doxysubsubsection{\texorpdfstring{bounding\_boxes\_to\_poses\_handler()}{bounding\_boxes\_to\_poses\_handler()}}
+{\footnotesize\ttfamily def pointcloud\+\_\+node.\+bounding\+\_\+boxes\+\_\+to\+\_\+poses\+\_\+handler (\begin{DoxyParamCaption}\item[{}]{req }\end{DoxyParamCaption})}
+
+
+
+handler of bounding\+\_\+boxes\+\_\+to\+\_\+poses service, type ur5\+\_\+lego.\+srv.\+Bounding\+Boxes\+To\+Poses It reads image and pointcloud from the camera and passes it together with the bounding boxes to the object\+\_\+detection() function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & the list of bounding boxes \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+res\+: the list of estimated poses 
+\end{DoxyReturn}

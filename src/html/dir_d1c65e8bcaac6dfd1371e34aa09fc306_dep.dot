@@ -1,0 +1,8 @@
+digraph "task_planner" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  dir_d1c65e8bcaac6dfd1371e34aa09fc306 [shape=box, label="task_planner", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_d1c65e8bcaac6dfd1371e34aa09fc306.html"];
+  dir_8a22600b83d98404e98bc699cbf238ff [shape=box label="motion_planner_ur5" URL="dir_8a22600b83d98404e98bc699cbf238ff.html"];
+  dir_d1c65e8bcaac6dfd1371e34aa09fc306->dir_8a22600b83d98404e98bc699cbf238ff [headlabel="2", labeldistance=1.5 headhref="dir_000004_000003.html"];
+}

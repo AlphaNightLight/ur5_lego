@@ -1,0 +1,90 @@
+\hypertarget{motion__planner_8h}{}\doxysection{motion\+\_\+planner\+\_\+ur5/motion\+\_\+planner.h File Reference}
+\label{motion__planner_8h}\index{motion\_planner\_ur5/motion\_planner.h@{motion\_planner\_ur5/motion\_planner.h}}
+
+
+Functions declaration for ur5 motion planning.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$eigen3/\+Eigen/\+Core$>$}\newline
+{\ttfamily \#include $<$eigen3/\+Eigen/\+Dense$>$}\newline
+{\ttfamily \#include $<$eigen3/\+Eigen/\+Geometry$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include \char`\"{}ros/ros.\+h\char`\"{}}\newline
+Include dependency graph for motion\+\_\+planner.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef Matrix$<$ double, 6, 6 $>$ {\bfseries Matrix6d}
+\item 
+typedef Matrix$<$ double, 6, 1 $>$ {\bfseries Vector6d}
+\item 
+typedef Matrix$<$ double, 8, 1 $>$ {\bfseries Vector8d}
+\item 
+typedef Matrix$<$ double, 3, 1 $>$ {\bfseries Vector3d}
+\item 
+typedef Matrix$<$ double, Dynamic, 8 $>$ {\bfseries Path}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{group__Motion__module_gab318d3ba263e0b9f0632088ffcb43636}{almost\+Zero}} (double x)
+\begin{DoxyCompactList}\small\item\em Function to check if a number is very close to zero. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__Motion__module_ga8d82b67c2d95fb8bd7f0cb397faa6440}{print\+\_\+eigen}} (string str, Matrix\+Xd m)
+\begin{DoxyCompactList}\small\item\em Function to print the matrix. \end{DoxyCompactList}\item 
+Matrix4d \mbox{\hyperlink{group__Motion__module_gacc3681139836e3c6674a86c3a45fd2d1}{compute\+Transformation\+Matrix}} (double th, double alpha, double distance, double a)
+\begin{DoxyCompactList}\small\item\em Compute transformation matrix from i to j frame. \end{DoxyCompactList}\item 
+Matrix4d \mbox{\hyperlink{group__Motion__module_ga07c77fb44920c9747dfd073917b0c13d}{base\+\_\+to\+\_\+world}} ()
+\begin{DoxyCompactList}\small\item\em Compute transformation matrix from base to world frame. \end{DoxyCompactList}\item 
+Matrix4d \mbox{\hyperlink{group__Motion__module_ga95d6d8f2c908c0a1d454544cea067ba9}{adjust\+\_\+gripper}} ()
+\begin{DoxyCompactList}\small\item\em Compute transformation matrix to align gripper to world frame. \end{DoxyCompactList}\item 
+Matrix6d \mbox{\hyperlink{group__Motion__module_ga6687cd04fcd36f963ed76ffbff7f723c}{compute\+Jacobian}} (Vector6d th)
+\begin{DoxyCompactList}\small\item\em Function to compute Jacobian matrix. \end{DoxyCompactList}\item 
+Matrix6d \mbox{\hyperlink{group__Motion__module_gaffdc0a7709e59a29a720da8e3a857fc2}{compute\+Jacobian\+Cross}} (Vector6d th)
+\begin{DoxyCompactList}\small\item\em Function to compute Jacobian matrix using cross product. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix4d \mbox{\hyperlink{group__Motion__module_ga4ac576bbf78dfcd5d3b51d0711bee5b4}{direct\+Kin}} (Vector\+Xd Th)
+\begin{DoxyCompactList}\small\item\em Function to compute direct kinematics matrix. \end{DoxyCompactList}\item 
+Matrix$<$ double, 6, 8 $>$ \mbox{\hyperlink{group__Motion__module_ga4a58537822532c937c58d0d20d8819ff}{inverse\+Kin}} (Vector3d p60, Matrix3d R60, double scale\+Factor)
+\begin{DoxyCompactList}\small\item\em Function to compute inverse matrix. \end{DoxyCompactList}\item 
+Vector3d \mbox{\hyperlink{group__Motion__module_ga459bafaee78fdbca28b6f8fdb06c0a93}{lerp}} (double time, Vector3d p1, Vector3d p2)
+\begin{DoxyCompactList}\small\item\em To linearly interpolate two vectors in the space. \end{DoxyCompactList}\item 
+Quaterniond \mbox{\hyperlink{group__Motion__module_gac1ed14e00dbcf1a1d452a0c8b2210dd3}{myslerp}} (double time, Quaterniond q1, Quaterniond q2)
+\begin{DoxyCompactList}\small\item\em To spherically interpolate two quaternions. \end{DoxyCompactList}\item 
+Path \mbox{\hyperlink{group__Motion__module_ga60be8ff38c2f589bdb17bc31799bbe28}{insert\+\_\+new\+\_\+path\+\_\+instance}} (Path p, Vector6d js, Vector2d gs)
+\begin{DoxyCompactList}\small\item\em To insert a new path instance each time it\textquotesingle{}s computed using inverse differential kinematics. \end{DoxyCompactList}\item 
+Path \mbox{\hyperlink{group__Motion__module_gadf60eced1d58b150bec2504b386a3e31}{differential\+\_\+inverse\+\_\+kin\+\_\+quaternions}} (Vector8d mr, Vector3d f\+\_\+p, Quaterniond f\+\_\+q)
+\begin{DoxyCompactList}\small\item\em To compute the path the robot has to follow to reach the final point, which is expressed using position and quaternion for orientation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const Vector\+Xd \mbox{\hyperlink{group__Motion__module_gaef4180a824a150c0d584bccc407662b9}{A}} = (Vector\+Xd(6) $<$$<$ 0, -\/0.\+425, -\/0.\+3922, 0, 0, 0).finished()
+\begin{DoxyCompactList}\small\item\em Vector of A distance of standard U\+R5. \end{DoxyCompactList}\item 
+const Vector\+Xd \mbox{\hyperlink{group__Motion__module_ga0cb058a665ce5cc88412e5535c612798}{D}} = (Vector\+Xd(6) $<$$<$ 0.\+1625, 0, 0, 0.\+1333, 0.\+0997, 0.\+0996).finished()
+\begin{DoxyCompactList}\small\item\em Vector of D distance of standard U\+R5. \end{DoxyCompactList}\item 
+const Vector\+Xd \mbox{\hyperlink{group__Motion__module_ga4c14edd5555c2a92158c249fecc64bb4}{A\+L\+P\+HA}} = (Vector\+Xd(6) $<$$<$ M\+\_\+\+PI / 2, 0, 0, M\+\_\+\+PI / 2, -\/M\+\_\+\+PI / 2, 0).finished()
+\begin{DoxyCompactList}\small\item\em Vector of A\+L\+P\+HA angles of standard U\+R5. \end{DoxyCompactList}\item 
+const Vector\+Xd {\bfseries a} = (Vector\+Xd(6) $<$$<$ 0, -\/0.\+425, -\/0.\+3922, 0, 0, 0).finished()
+\item 
+const Vector\+Xd {\bfseries d} = (Vector\+Xd(6) $<$$<$ 0.\+1625, 0, 0, 0.\+1333, 0.\+0997, 0.\+0996).finished()
+\item 
+const Vector\+Xd {\bfseries alpha} = (Vector\+Xd(6) $<$$<$ M\+\_\+\+PI / 2, 0, 0, M\+\_\+\+PI / 2, -\/M\+\_\+\+PI / 2, 0).finished()
+\item 
+const double \mbox{\hyperlink{group__Motion__module_ga4d2852f394c94e7eaac02e3c5b393654}{dt}} = 0.\+1
+\begin{DoxyCompactList}\small\item\em Time delta used in a single path unit. \end{DoxyCompactList}\item 
+const double \mbox{\hyperlink{group__Motion__module_ga948d1209d4185ebb96a27ace68eb47d5}{path\+\_\+dt}} = 20.\+0
+\begin{DoxyCompactList}\small\item\em Time duration of a single path unit. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Functions declaration for ur5 motion planning. 
+
+\begin{DoxyDate}{Date}
+26/11/2023 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Federica Lorenzini 
+\end{DoxyAuthor}

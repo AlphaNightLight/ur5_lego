@@ -1,0 +1,97 @@
+\hypertarget{robot__controller_8cpp}{}\doxysection{task\+\_\+planner/robot\+\_\+controller.cpp File Reference}
+\label{robot__controller_8cpp}\index{task\_planner/robot\_controller.cpp@{task\_planner/robot\_controller.cpp}}
+
+
+Ros node that exposes a move\+\_\+robot service of type ur5\+\_\+lego\+::\+Move\+Robot. It recieves a vector of 8 joints, and moves the robot to that configuration from whatever pose it is now sending a message on the /ur5/joint\+\_\+group\+\_\+pos\+\_\+controller/command topic of ur5\+\_\+generic.\+py.  
+
+
+{\ttfamily \#include \char`\"{}ros/ros.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ros/master.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ur5\+\_\+lego/\+Move\+Robot.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}std\+\_\+msgs/\+Float64\+Multi\+Array.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}sensor\+\_\+msgs/\+Joint\+State.\+h\char`\"{}}\newline
+Include dependency graph for robot\+\_\+controller.\+cpp\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{robot__controller_8cpp_a5a0eabf2e3d23bc54dd97f419cb77bc2}{move\+\_\+robot\+\_\+handler}} (ur5\+\_\+lego\+::\+Move\+Robot\+::\+Request \&req, ur5\+\_\+lego\+::\+Move\+Robot\+::\+Response \&res)
+\begin{DoxyCompactList}\small\item\em handler of move\+\_\+robot service, type ur5\+\_\+lego\+::\+Move\+Robot. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{robot__controller_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\begin{DoxyCompactList}\small\item\em Main code of robot\+\_\+controller. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{robot__controller_8cpp_a1f0e2fe766d3224721250e4a7ebec309}\label{robot__controller_8cpp_a1f0e2fe766d3224721250e4a7ebec309}} 
+char {\bfseries info\+\_\+name} \mbox{[}$\,$\mbox{]} = \char`\"{} \mbox{[}robot\+\_\+controller\mbox{]}\+:\char`\"{}
+\item 
+\mbox{\Hypertarget{robot__controller_8cpp_aa021995764a0c77f628e3411497239cc}\label{robot__controller_8cpp_aa021995764a0c77f628e3411497239cc}} 
+bool {\bfseries debug\+\_\+mode} = true
+\item 
+\mbox{\Hypertarget{robot__controller_8cpp_ae3d9f072799fa54e591c7b52ea2384d2}\label{robot__controller_8cpp_ae3d9f072799fa54e591c7b52ea2384d2}} 
+int {\bfseries J\+O\+I\+N\+T\+\_\+\+S\+I\+ZE} = 8
+\item 
+\mbox{\Hypertarget{robot__controller_8cpp_ae96e491b3e3abc6780900ab09a72c7cb}\label{robot__controller_8cpp_ae96e491b3e3abc6780900ab09a72c7cb}} 
+double {\bfseries M\+A\+X\+\_\+\+A\+N\+G\+U\+L\+A\+R\+\_\+\+S\+P\+E\+ED} = 3.\+1415926535 / 10
+\item 
+\mbox{\Hypertarget{robot__controller_8cpp_a3048b23d88c3fd7e2d1b8140445d1b87}\label{robot__controller_8cpp_a3048b23d88c3fd7e2d1b8140445d1b87}} 
+double {\bfseries U\+P\+D\+A\+T\+E\+\_\+\+R\+A\+TE} = 1000.\+0
+\item 
+\mbox{\Hypertarget{robot__controller_8cpp_a1c2755015f3e113432356a76d46db45d}\label{robot__controller_8cpp_a1c2755015f3e113432356a76d46db45d}} 
+double {\bfseries M\+A\+X\+\_\+\+I\+N\+C\+R\+E\+M\+E\+NT}
+\item 
+\mbox{\Hypertarget{robot__controller_8cpp_a6ecf5f629b17d1eb18027f2c8dcb6cd4}\label{robot__controller_8cpp_a6ecf5f629b17d1eb18027f2c8dcb6cd4}} 
+ros\+::\+Publisher {\bfseries joint\+\_\+group\+\_\+pos\+\_\+controller\+\_\+publisher}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Ros node that exposes a move\+\_\+robot service of type ur5\+\_\+lego\+::\+Move\+Robot. It recieves a vector of 8 joints, and moves the robot to that configuration from whatever pose it is now sending a message on the /ur5/joint\+\_\+group\+\_\+pos\+\_\+controller/command topic of ur5\+\_\+generic.\+py. 
+
+\begin{DoxyDate}{Date}
+04/01/2024 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Alex Pegoraro 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{robot__controller_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{robot__controller_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{robot\_controller.cpp@{robot\_controller.cpp}!main@{main}}
+\index{main@{main}!robot\_controller.cpp@{robot\_controller.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+
+
+Main code of robot\+\_\+controller. 
+
+It waits for ur5\+\_\+generic.\+py, then advertises a move\+\_\+robot service of type ur5\+\_\+lego\+::\+Move\+Robot, with handler \mbox{\hyperlink{robot__controller_8cpp_a5a0eabf2e3d23bc54dd97f419cb77bc2}{move\+\_\+robot\+\_\+handler()}}. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em int} & argc, char $\ast$$\ast$argv\+: classical command line arguments. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, 1 if something went wrong. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{robot__controller_8cpp_a5a0eabf2e3d23bc54dd97f419cb77bc2}\label{robot__controller_8cpp_a5a0eabf2e3d23bc54dd97f419cb77bc2}} 
+\index{robot\_controller.cpp@{robot\_controller.cpp}!move\_robot\_handler@{move\_robot\_handler}}
+\index{move\_robot\_handler@{move\_robot\_handler}!robot\_controller.cpp@{robot\_controller.cpp}}
+\doxysubsubsection{\texorpdfstring{move\_robot\_handler()}{move\_robot\_handler()}}
+{\footnotesize\ttfamily bool move\+\_\+robot\+\_\+handler (\begin{DoxyParamCaption}\item[{ur5\+\_\+lego\+::\+Move\+Robot\+::\+Request \&}]{req,  }\item[{ur5\+\_\+lego\+::\+Move\+Robot\+::\+Response \&}]{res }\end{DoxyParamCaption})}
+
+
+
+handler of move\+\_\+robot service, type ur5\+\_\+lego\+::\+Move\+Robot. 
+
+It retrieves the actual joint state of the robot and interpolates it with the desired one. All the intermediate joints are sent to the robot, causing the motion. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ur5\+\_\+lego\+::\+Move\+Robot\+::\+Request} & \&req\+: the desired joint configuration. \\
+\hline
+\mbox{\texttt{ out}}  & {\em ur5\+\_\+lego\+::\+Move\+Robot\+::\+Response} & \&res\+: true if success, false if something went wrong. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if success, false if something went wrong. 
+\end{DoxyReturn}

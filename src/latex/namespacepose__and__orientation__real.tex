@@ -1,0 +1,286 @@
+\hypertarget{namespacepose__and__orientation__real}{}\doxysection{pose\+\_\+and\+\_\+orientation\+\_\+real Namespace Reference}
+\label{namespacepose__and__orientation__real}\index{pose\_and\_orientation\_real@{pose\_and\_orientation\_real}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classpose__and__orientation__real_1_1Input}{Input}}
+\item 
+class \mbox{\hyperlink{classpose__and__orientation__real_1_1Output}{Output}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacepose__and__orientation__real_ae2cf67b61773d2228751ca0206b69de6}{find\+\_\+object}} (image)
+\begin{DoxyCompactList}\small\item\em This function computes the largest contour of an image. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacepose__and__orientation__real_a33fa454f1aedcbe167afbbb465647025}{draw\+\_\+contour}} (image, contour)
+\begin{DoxyCompactList}\small\item\em This function draws a contour on an image. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacepose__and__orientation__real_a030079b9c39ea61383319dbc5b166902}{discriminate\+\_\+brick\+\_\+points}} (image, offset)
+\begin{DoxyCompactList}\small\item\em The function computes every single point contained in an object exploiting find\+\_\+object and draw\+\_\+contour. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacepose__and__orientation__real_a0ca2f8b0e60e9301acc44d39a12dab1f}{find\+\_\+centroid}} (points)
+\begin{DoxyCompactList}\small\item\em This function finds the centroid (centre of mass) of the brick. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacepose__and__orientation__real_a5fdb3f58acadf13c20ac2681756692a9}{convert\+\_\+coordinates}} (coordinates, from\+\_\+frame, to\+\_\+frame)
+\begin{DoxyCompactList}\small\item\em This function allows to automatically convert a coordinate expressed in a certain frame to another frame. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacepose__and__orientation__real_a2f6871d87ea89d7ee08092353d4362d6}{rotation\+\_\+matrix\+\_\+to\+\_\+euler\+\_\+angles}} (R)
+\begin{DoxyCompactList}\small\item\em This function converts a rotation matrix into euler angles (R\+PY). \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacepose__and__orientation__real_ad2c415a060c11209dfcaecccc642a647}{preprocess\+\_\+point\+\_\+cloud}} (pcd, voxel\+\_\+size)
+\begin{DoxyCompactList}\small\item\em This function downsamples the point cloud, estimates normals, then computes a F\+P\+FH feature for each point. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacepose__and__orientation__real_a29acc57ebdee64641f9729d7cdb7fd0e}{prepare\+\_\+dataset}} (source, target, voxel\+\_\+size)
+\begin{DoxyCompactList}\small\item\em This function simply prepares all the pointclouds (the source one and the target one). \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacepose__and__orientation__real_ae38284b0a781125b957f046e66329324}{execute\+\_\+fast\+\_\+global\+\_\+registration}} (source\+\_\+down, target\+\_\+down, source\+\_\+fpfh, target\+\_\+fpfh, voxel\+\_\+size)
+\begin{DoxyCompactList}\small\item\em This executes the actual global registration. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacepose__and__orientation__real_a71b7fa5443b48fbc7a00fcc2b023fe65}{icp\+\_\+registration}} (source\+\_\+pointcloud, target\+\_\+pointcloud, threshold, starting\+\_\+transformation)
+\begin{DoxyCompactList}\small\item\em This function finds a suitable final registration. \end{DoxyCompactList}\item 
+None \mbox{\hyperlink{namespacepose__and__orientation__real_a3d5f2fa994102665bd9c1e924a2c5e17}{object\+\_\+detection}} (Image image\+\_\+msg, Point\+Cloud2 point\+\_\+cloud2\+\_\+msg, inputs)
+\begin{DoxyCompactList}\small\item\em The function finds the position of the object with respect to the world frame. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespacepose__and__orientation__real_a9d55758c7816e6c38116c33be86de33f}\label{namespacepose__and__orientation__real_a9d55758c7816e6c38116c33be86de33f}} 
+list {\bfseries bricks\+\_\+information} = \mbox{[}$\,$\mbox{]}
+\item 
+\mbox{\Hypertarget{namespacepose__and__orientation__real_a6b19395d656a5b4cbd2069b798ce3bc3}\label{namespacepose__and__orientation__real_a6b19395d656a5b4cbd2069b798ce3bc3}} 
+int {\bfseries C\+R\+O\+P\+P\+I\+N\+G\+\_\+\+O\+F\+F\+S\+ET} = 10
+\item 
+\mbox{\Hypertarget{namespacepose__and__orientation__real_a4a9f13d40a5436f952d6234d0e3a375c}\label{namespacepose__and__orientation__real_a4a9f13d40a5436f952d6234d0e3a375c}} 
+float {\bfseries threshold} = 0.\+01
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Write something...
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacepose__and__orientation__real_a5fdb3f58acadf13c20ac2681756692a9}\label{namespacepose__and__orientation__real_a5fdb3f58acadf13c20ac2681756692a9}} 
+\index{pose\_and\_orientation\_real@{pose\_and\_orientation\_real}!convert\_coordinates@{convert\_coordinates}}
+\index{convert\_coordinates@{convert\_coordinates}!pose\_and\_orientation\_real@{pose\_and\_orientation\_real}}
+\doxysubsubsection{\texorpdfstring{convert\_coordinates()}{convert\_coordinates()}}
+{\footnotesize\ttfamily def pose\+\_\+and\+\_\+orientation\+\_\+real.\+convert\+\_\+coordinates (\begin{DoxyParamCaption}\item[{}]{coordinates,  }\item[{}]{from\+\_\+frame,  }\item[{}]{to\+\_\+frame }\end{DoxyParamCaption})}
+
+
+
+This function allows to automatically convert a coordinate expressed in a certain frame to another frame. 
+
+This is done by listening to the frames published by the R\+OS master.
+
+Inputs\+:
+\begin{DoxyItemize}
+\item coordinates\+: the coordinates that are needed to be converted
+\item from\+\_\+frame\+: initial frame
+\item to\+\_\+frame\+: final frame
+\end{DoxyItemize}
+
+Outputs\+:
+\begin{DoxyItemize}
+\item output\+\_\+pose\+\_\+stamped.\+pose\+: pose of the resulting transformed coordinate 
+\end{DoxyItemize}\mbox{\Hypertarget{namespacepose__and__orientation__real_a030079b9c39ea61383319dbc5b166902}\label{namespacepose__and__orientation__real_a030079b9c39ea61383319dbc5b166902}} 
+\index{pose\_and\_orientation\_real@{pose\_and\_orientation\_real}!discriminate\_brick\_points@{discriminate\_brick\_points}}
+\index{discriminate\_brick\_points@{discriminate\_brick\_points}!pose\_and\_orientation\_real@{pose\_and\_orientation\_real}}
+\doxysubsubsection{\texorpdfstring{discriminate\_brick\_points()}{discriminate\_brick\_points()}}
+{\footnotesize\ttfamily def pose\+\_\+and\+\_\+orientation\+\_\+real.\+discriminate\+\_\+brick\+\_\+points (\begin{DoxyParamCaption}\item[{}]{image,  }\item[{}]{offset }\end{DoxyParamCaption})}
+
+
+
+The function computes every single point contained in an object exploiting find\+\_\+object and draw\+\_\+contour. 
+
+The points are found using the largest contour of the image. Hence points that are part of the contour and of the inside of the contour are part of the result.
+
+Inputs\+:
+\begin{DoxyItemize}
+\item image\+: the image in which the desired object is
+\item offset\+: this input allows to re-\/scale a previously cropped image in order to return the real values of the points in the image
+\end{DoxyItemize}
+
+Outputs\+:
+\begin{DoxyItemize}
+\item result\+: all the points that are part of the object 
+\end{DoxyItemize}\mbox{\Hypertarget{namespacepose__and__orientation__real_a33fa454f1aedcbe167afbbb465647025}\label{namespacepose__and__orientation__real_a33fa454f1aedcbe167afbbb465647025}} 
+\index{pose\_and\_orientation\_real@{pose\_and\_orientation\_real}!draw\_contour@{draw\_contour}}
+\index{draw\_contour@{draw\_contour}!pose\_and\_orientation\_real@{pose\_and\_orientation\_real}}
+\doxysubsubsection{\texorpdfstring{draw\_contour()}{draw\_contour()}}
+{\footnotesize\ttfamily def pose\+\_\+and\+\_\+orientation\+\_\+real.\+draw\+\_\+contour (\begin{DoxyParamCaption}\item[{}]{image,  }\item[{}]{contour }\end{DoxyParamCaption})}
+
+
+
+This function draws a contour on an image. 
+
+Inputs\+:
+\begin{DoxyItemize}
+\item image\+: the image on which the contour is drawn
+\end{DoxyItemize}
+
+Outputs\+:
+\begin{DoxyItemize}
+\item result\+: the contour laid on the image 
+\end{DoxyItemize}\mbox{\Hypertarget{namespacepose__and__orientation__real_ae38284b0a781125b957f046e66329324}\label{namespacepose__and__orientation__real_ae38284b0a781125b957f046e66329324}} 
+\index{pose\_and\_orientation\_real@{pose\_and\_orientation\_real}!execute\_fast\_global\_registration@{execute\_fast\_global\_registration}}
+\index{execute\_fast\_global\_registration@{execute\_fast\_global\_registration}!pose\_and\_orientation\_real@{pose\_and\_orientation\_real}}
+\doxysubsubsection{\texorpdfstring{execute\_fast\_global\_registration()}{execute\_fast\_global\_registration()}}
+{\footnotesize\ttfamily def pose\+\_\+and\+\_\+orientation\+\_\+real.\+execute\+\_\+fast\+\_\+global\+\_\+registration (\begin{DoxyParamCaption}\item[{}]{source\+\_\+down,  }\item[{}]{target\+\_\+down,  }\item[{}]{source\+\_\+fpfh,  }\item[{}]{target\+\_\+fpfh,  }\item[{}]{voxel\+\_\+size }\end{DoxyParamCaption})}
+
+
+
+This executes the actual global registration. 
+
+It performs fast global registration based on feature matching with a specified maximum correspondence distance, and returns the result of the registration. This registration is then used in the icp\+\_\+registration to estimate a more accurate registration.
+
+Inputs\+:
+\begin{DoxyItemize}
+\item source\+: the source pointcloud
+\item target\+: the target pointcloud
+\item voxel\+\_\+size\+: the size at which we desire to downsample
+\end{DoxyItemize}
+
+Outputs\+:
+\begin{DoxyItemize}
+\item result\+: the final registration 
+\end{DoxyItemize}\mbox{\Hypertarget{namespacepose__and__orientation__real_a0ca2f8b0e60e9301acc44d39a12dab1f}\label{namespacepose__and__orientation__real_a0ca2f8b0e60e9301acc44d39a12dab1f}} 
+\index{pose\_and\_orientation\_real@{pose\_and\_orientation\_real}!find\_centroid@{find\_centroid}}
+\index{find\_centroid@{find\_centroid}!pose\_and\_orientation\_real@{pose\_and\_orientation\_real}}
+\doxysubsubsection{\texorpdfstring{find\_centroid()}{find\_centroid()}}
+{\footnotesize\ttfamily def pose\+\_\+and\+\_\+orientation\+\_\+real.\+find\+\_\+centroid (\begin{DoxyParamCaption}\item[{}]{points }\end{DoxyParamCaption})}
+
+
+
+This function finds the centroid (centre of mass) of the brick. 
+
+Inputs\+:
+\begin{DoxyItemize}
+\item points\+: the 3D points that are part of the object
+\end{DoxyItemize}
+
+Outputs\+:
+\begin{DoxyItemize}
+\item centroid 
+\end{DoxyItemize}\mbox{\Hypertarget{namespacepose__and__orientation__real_ae2cf67b61773d2228751ca0206b69de6}\label{namespacepose__and__orientation__real_ae2cf67b61773d2228751ca0206b69de6}} 
+\index{pose\_and\_orientation\_real@{pose\_and\_orientation\_real}!find\_object@{find\_object}}
+\index{find\_object@{find\_object}!pose\_and\_orientation\_real@{pose\_and\_orientation\_real}}
+\doxysubsubsection{\texorpdfstring{find\_object()}{find\_object()}}
+{\footnotesize\ttfamily def pose\+\_\+and\+\_\+orientation\+\_\+real.\+find\+\_\+object (\begin{DoxyParamCaption}\item[{}]{image }\end{DoxyParamCaption})}
+
+
+
+This function computes the largest contour of an image. 
+
+Inputs\+:
+\begin{DoxyItemize}
+\item image\+: the image on which the computation is performed
+\end{DoxyItemize}
+
+Outputs\+:
+\begin{DoxyItemize}
+\item largest\+\_\+contour\+: the largest contour of the image based on the area 
+\end{DoxyItemize}\mbox{\Hypertarget{namespacepose__and__orientation__real_a71b7fa5443b48fbc7a00fcc2b023fe65}\label{namespacepose__and__orientation__real_a71b7fa5443b48fbc7a00fcc2b023fe65}} 
+\index{pose\_and\_orientation\_real@{pose\_and\_orientation\_real}!icp\_registration@{icp\_registration}}
+\index{icp\_registration@{icp\_registration}!pose\_and\_orientation\_real@{pose\_and\_orientation\_real}}
+\doxysubsubsection{\texorpdfstring{icp\_registration()}{icp\_registration()}}
+{\footnotesize\ttfamily def pose\+\_\+and\+\_\+orientation\+\_\+real.\+icp\+\_\+registration (\begin{DoxyParamCaption}\item[{}]{source\+\_\+pointcloud,  }\item[{}]{target\+\_\+pointcloud,  }\item[{}]{threshold,  }\item[{}]{starting\+\_\+transformation }\end{DoxyParamCaption})}
+
+
+
+This function finds a suitable final registration. 
+
+Inputs\+:
+\begin{DoxyItemize}
+\item source\+\_\+pointcloud
+\item target\+\_\+pointcloud
+\item threshold\+: the maximum correspondence distance for a point pair to be considered an inlier during the process.
+\item starting transformation\+: the initial transformation coming from the global registration
+\end{DoxyItemize}
+
+Outputs\+:
+\begin{DoxyItemize}
+\item 
+\item 
+\end{DoxyItemize}\mbox{\Hypertarget{namespacepose__and__orientation__real_a3d5f2fa994102665bd9c1e924a2c5e17}\label{namespacepose__and__orientation__real_a3d5f2fa994102665bd9c1e924a2c5e17}} 
+\index{pose\_and\_orientation\_real@{pose\_and\_orientation\_real}!object\_detection@{object\_detection}}
+\index{object\_detection@{object\_detection}!pose\_and\_orientation\_real@{pose\_and\_orientation\_real}}
+\doxysubsubsection{\texorpdfstring{object\_detection()}{object\_detection()}}
+{\footnotesize\ttfamily  None pose\+\_\+and\+\_\+orientation\+\_\+real.\+object\+\_\+detection (\begin{DoxyParamCaption}\item[{Image}]{image\+\_\+msg,  }\item[{Point\+Cloud2}]{point\+\_\+cloud2\+\_\+msg,  }\item[{}]{inputs }\end{DoxyParamCaption})}
+
+
+
+The function finds the position of the object with respect to the world frame. 
+
+Inputs\+:
+\begin{DoxyItemize}
+\item image\+\_\+msg\+: image published by the zed camera in R\+Viz
+\item point\+\_\+cloud2\+\_\+msg\+: data published by the Point\+Cloud2
+\item recognized\+\_\+bricks\+: information coming from the Y\+O\+LO model
+\end{DoxyItemize}
+
+Outputs\+:
+\begin{DoxyItemize}
+\item centre
+\item orientation 
+\end{DoxyItemize}\mbox{\Hypertarget{namespacepose__and__orientation__real_a29acc57ebdee64641f9729d7cdb7fd0e}\label{namespacepose__and__orientation__real_a29acc57ebdee64641f9729d7cdb7fd0e}} 
+\index{pose\_and\_orientation\_real@{pose\_and\_orientation\_real}!prepare\_dataset@{prepare\_dataset}}
+\index{prepare\_dataset@{prepare\_dataset}!pose\_and\_orientation\_real@{pose\_and\_orientation\_real}}
+\doxysubsubsection{\texorpdfstring{prepare\_dataset()}{prepare\_dataset()}}
+{\footnotesize\ttfamily def pose\+\_\+and\+\_\+orientation\+\_\+real.\+prepare\+\_\+dataset (\begin{DoxyParamCaption}\item[{}]{source,  }\item[{}]{target,  }\item[{}]{voxel\+\_\+size }\end{DoxyParamCaption})}
+
+
+
+This function simply prepares all the pointclouds (the source one and the target one). 
+
+The previously declared \textquotesingle{}prepare\+\_\+dataset\textquotesingle{} is used for each.
+
+Inputs\+:
+\begin{DoxyItemize}
+\item source\+: the source pointcloud
+\item target\+: the target pointcloud
+\item voxel\+\_\+size\+: the size at which we desire to downsample
+\end{DoxyItemize}
+
+Outputs\+:
+\begin{DoxyItemize}
+\item source\+: the source pointcloud
+\item target\+: the target pointcloud
+\item source\+\_\+down\+: the prepared (downsampled) source pointcloud
+\item target\+\_\+down\+: the prepared (downsampled) target pointcloud
+\item source\+\_\+fpfh\+: F\+P\+FH feature for the points of the source pointcloud
+\item target\+\_\+fpfh\+: F\+P\+FH feature for the points of the target pointcloud 
+\end{DoxyItemize}\mbox{\Hypertarget{namespacepose__and__orientation__real_ad2c415a060c11209dfcaecccc642a647}\label{namespacepose__and__orientation__real_ad2c415a060c11209dfcaecccc642a647}} 
+\index{pose\_and\_orientation\_real@{pose\_and\_orientation\_real}!preprocess\_point\_cloud@{preprocess\_point\_cloud}}
+\index{preprocess\_point\_cloud@{preprocess\_point\_cloud}!pose\_and\_orientation\_real@{pose\_and\_orientation\_real}}
+\doxysubsubsection{\texorpdfstring{preprocess\_point\_cloud()}{preprocess\_point\_cloud()}}
+{\footnotesize\ttfamily def pose\+\_\+and\+\_\+orientation\+\_\+real.\+preprocess\+\_\+point\+\_\+cloud (\begin{DoxyParamCaption}\item[{}]{pcd,  }\item[{}]{voxel\+\_\+size }\end{DoxyParamCaption})}
+
+
+
+This function downsamples the point cloud, estimates normals, then computes a F\+P\+FH feature for each point. 
+
+The F\+P\+FH feature is a 33-\/dimensional vector that describes the local geometric property of a point.
+
+Inputs\+:
+\begin{DoxyItemize}
+\item pcd\+: the pointcloud
+\item voxel\+\_\+size\+: the size at which we desire to downsample
+\end{DoxyItemize}
+
+Outputs\+:
+\begin{DoxyItemize}
+\item pcd\+\_\+down\+: the downsampled pointcloud
+\item pcd\+\_\+fpfh\+: F\+P\+FH feature for the point 
+\end{DoxyItemize}\mbox{\Hypertarget{namespacepose__and__orientation__real_a2f6871d87ea89d7ee08092353d4362d6}\label{namespacepose__and__orientation__real_a2f6871d87ea89d7ee08092353d4362d6}} 
+\index{pose\_and\_orientation\_real@{pose\_and\_orientation\_real}!rotation\_matrix\_to\_euler\_angles@{rotation\_matrix\_to\_euler\_angles}}
+\index{rotation\_matrix\_to\_euler\_angles@{rotation\_matrix\_to\_euler\_angles}!pose\_and\_orientation\_real@{pose\_and\_orientation\_real}}
+\doxysubsubsection{\texorpdfstring{rotation\_matrix\_to\_euler\_angles()}{rotation\_matrix\_to\_euler\_angles()}}
+{\footnotesize\ttfamily def pose\+\_\+and\+\_\+orientation\+\_\+real.\+rotation\+\_\+matrix\+\_\+to\+\_\+euler\+\_\+angles (\begin{DoxyParamCaption}\item[{}]{R }\end{DoxyParamCaption})}
+
+
+
+This function converts a rotation matrix into euler angles (R\+PY). 
+
+Inputs\+:
+\begin{DoxyItemize}
+\item R\+: the rotation matrix
+\end{DoxyItemize}
+
+Outputs\+:
+\begin{DoxyItemize}
+\item x\+: roll angle
+\item y\+: pitch angle
+\item z\+: yaw angle 
+\end{DoxyItemize}

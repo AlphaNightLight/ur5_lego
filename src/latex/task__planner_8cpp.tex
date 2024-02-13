@@ -1,0 +1,76 @@
+\hypertarget{task__planner_8cpp}{}\doxysection{task\+\_\+planner/task\+\_\+planner.cpp File Reference}
+\label{task__planner_8cpp}\index{task\_planner/task\_planner.cpp@{task\_planner/task\_planner.cpp}}
+
+
+The master of all the project, and the entry point of the workflow. It invokes services from all the other nodes in the following order\+: 1) \mbox{\hyperlink{namespacevision__node}{vision\+\_\+node}} detects the bounding boxes. 2) \mbox{\hyperlink{namespacepointcloud__node}{pointcloud\+\_\+node}} uses such information to estimate the blocks\textquotesingle{} poses. 3) \mbox{\hyperlink{namespacedesired__poses__node}{desired\+\_\+poses\+\_\+node}} provides the target pose for each block. 4) motion\+\_\+planner recieves detected and desired pose for each block and moves it.  
+
+
+{\ttfamily \#include \char`\"{}ros/ros.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ur5\+\_\+lego/\+Get\+Bounding\+Boxes.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ur5\+\_\+lego/\+Bounding\+Boxes\+To\+Poses.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ur5\+\_\+lego/\+Get\+Desired\+Poses.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ur5\+\_\+lego/\+Move\+Block.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ur5\+\_\+lego/\+Target\+Pose.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ur5\+\_\+lego/\+Bounding\+Box.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+Include dependency graph for task\+\_\+planner.\+cpp\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{task__planner_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\begin{DoxyCompactList}\small\item\em The entry code of all the project. It calls everything else. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{task__planner_8cpp_a1f0e2fe766d3224721250e4a7ebec309}\label{task__planner_8cpp_a1f0e2fe766d3224721250e4a7ebec309}} 
+char {\bfseries info\+\_\+name} \mbox{[}$\,$\mbox{]} = \char`\"{} \mbox{[} task\+\_\+planner \mbox{]}\+:\char`\"{}
+\item 
+\mbox{\Hypertarget{task__planner_8cpp_aa021995764a0c77f628e3411497239cc}\label{task__planner_8cpp_aa021995764a0c77f628e3411497239cc}} 
+bool {\bfseries debug\+\_\+mode} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The master of all the project, and the entry point of the workflow. It invokes services from all the other nodes in the following order\+: 1) \mbox{\hyperlink{namespacevision__node}{vision\+\_\+node}} detects the bounding boxes. 2) \mbox{\hyperlink{namespacepointcloud__node}{pointcloud\+\_\+node}} uses such information to estimate the blocks\textquotesingle{} poses. 3) \mbox{\hyperlink{namespacedesired__poses__node}{desired\+\_\+poses\+\_\+node}} provides the target pose for each block. 4) motion\+\_\+planner recieves detected and desired pose for each block and moves it. 
+
+\begin{DoxyDate}{Date}
+04/01/2024 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Alex Pegoraro 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{task__planner_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{task__planner_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{task\_planner.cpp@{task\_planner.cpp}!main@{main}}
+\index{main@{main}!task\_planner.cpp@{task\_planner.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+
+
+The entry code of all the project. It calls everything else. 
+
+It calls the following nodes\+: \mbox{\hyperlink{namespacevision__node}{vision\+\_\+node}} for bounding boxes, \mbox{\hyperlink{namespacepointcloud__node}{pointcloud\+\_\+node}} to convert them into actual poses, \mbox{\hyperlink{namespacedesired__poses__node}{desired\+\_\+poses\+\_\+node}} to retrive desired block poses, motion\+\_\+planner to actually move the block. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em int} & argc, char $\ast$$\ast$argv\+: classical command line arguments. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, 1 if something went wrong. 
+\end{DoxyReturn}
+Initialization
+
+Vision Node
+
+Pointcloud Node
+
+Desired Poses Node
+
+Motion Planner
+
+actual\+\_\+poses.\+push\+\_\+back(ur5\+\_\+lego\+::\+Target\+Pose()); actual\+\_\+poses.\+at(0).label = \char`\"{}\+X1-\/\+Y1-\/\+Z2\char`\"{}; actual\+\_\+poses.\+at(0).position.\+x = 0.\+6; actual\+\_\+poses.\+at(0).position.\+y = 0.\+6; actual\+\_\+poses.\+at(0).position.\+z = 0.\+87; actual\+\_\+poses.\+at(0).euler.\+x = 0; actual\+\_\+poses.\+at(0).euler.\+y = 0; actual\+\_\+poses.\+at(0).euler.\+z = 0.\+78; /$\ast$$\ast$ actual\+\_\+poses.\+push\+\_\+back(ur5\+\_\+lego\+::\+Target\+Pose()); actual\+\_\+poses.\+push\+\_\+back(ur5\+\_\+lego\+::\+Target\+Pose()); actual\+\_\+poses.\+push\+\_\+back(ur5\+\_\+lego\+::\+Target\+Pose()); actual\+\_\+poses.\+at(0).label = \char`\"{}zzz\char`\"{}; actual\+\_\+poses.\+at(1).label = \char`\"{}bbb\char`\"{}; actual\+\_\+poses.\+at(2).label = \char`\"{}aaa\char`\"{}; /$\ast$
+
+End

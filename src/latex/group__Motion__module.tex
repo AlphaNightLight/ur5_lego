@@ -1,0 +1,336 @@
+\hypertarget{group__Motion__module}{}\doxysection{M\+O\+T\+I\+ON}
+\label{group__Motion__module}\index{MOTION@{MOTION}}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__Motion__module_ga827d6fd2b568970038cb4c5628a806c4}\label{group__Motion__module_ga827d6fd2b568970038cb4c5628a806c4}} 
+typedef Matrix$<$ double, 6, 6 $>$ {\bfseries Matrix6d}
+\item 
+\mbox{\Hypertarget{group__Motion__module_ga98c311f8f84d62784ec0499c9df9816d}\label{group__Motion__module_ga98c311f8f84d62784ec0499c9df9816d}} 
+typedef Matrix$<$ double, 6, 1 $>$ {\bfseries Vector6d}
+\item 
+\mbox{\Hypertarget{group__Motion__module_gad02ada258c7bcecf49025f9aa5daaf56}\label{group__Motion__module_gad02ada258c7bcecf49025f9aa5daaf56}} 
+typedef Matrix$<$ double, 8, 1 $>$ {\bfseries Vector8d}
+\item 
+\mbox{\Hypertarget{group__Motion__module_gac9d330ba4a33d4db13155ab248ce88ed}\label{group__Motion__module_gac9d330ba4a33d4db13155ab248ce88ed}} 
+typedef Matrix$<$ double, 3, 1 $>$ {\bfseries Vector3d}
+\item 
+\mbox{\Hypertarget{group__Motion__module_ga21d3f3cd88d7e0848be4d48b906ec1e5}\label{group__Motion__module_ga21d3f3cd88d7e0848be4d48b906ec1e5}} 
+typedef Matrix$<$ double, Dynamic, 8 $>$ {\bfseries Path}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Matrix4d \mbox{\hyperlink{group__Motion__module_gacc3681139836e3c6674a86c3a45fd2d1}{compute\+Transformation\+Matrix}} (double th, double alpha, double distance, double a)
+\begin{DoxyCompactList}\small\item\em Compute transformation matrix from i to j frame. \end{DoxyCompactList}\item 
+Matrix4d \mbox{\hyperlink{group__Motion__module_ga07c77fb44920c9747dfd073917b0c13d}{base\+\_\+to\+\_\+world}} ()
+\begin{DoxyCompactList}\small\item\em Compute transformation matrix from base to world frame. \end{DoxyCompactList}\item 
+Matrix4d \mbox{\hyperlink{group__Motion__module_ga95d6d8f2c908c0a1d454544cea067ba9}{adjust\+\_\+gripper}} ()
+\begin{DoxyCompactList}\small\item\em Compute transformation matrix to align gripper to world frame. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__Motion__module_gab318d3ba263e0b9f0632088ffcb43636}{almost\+Zero}} (double x)
+\begin{DoxyCompactList}\small\item\em Function to check if a number is very close to zero. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__Motion__module_ga8d82b67c2d95fb8bd7f0cb397faa6440}{print\+\_\+eigen}} (string str, Matrix\+Xd m)
+\begin{DoxyCompactList}\small\item\em Function to print the matrix. \end{DoxyCompactList}\item 
+Matrix6d \mbox{\hyperlink{group__Motion__module_ga6687cd04fcd36f963ed76ffbff7f723c}{compute\+Jacobian}} (Vector6d th)
+\begin{DoxyCompactList}\small\item\em Function to compute Jacobian matrix. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix4d \mbox{\hyperlink{group__Motion__module_ga4ac576bbf78dfcd5d3b51d0711bee5b4}{direct\+Kin}} (Vector\+Xd Th)
+\begin{DoxyCompactList}\small\item\em Function to compute direct kinematics matrix. \end{DoxyCompactList}\item 
+Matrix$<$ double, 6, 8 $>$ \mbox{\hyperlink{group__Motion__module_ga4a58537822532c937c58d0d20d8819ff}{inverse\+Kin}} (Vector3d p60, Matrix3d R60, double scale\+Factor)
+\begin{DoxyCompactList}\small\item\em Function to compute inverse matrix. \end{DoxyCompactList}\item 
+Vector3d \mbox{\hyperlink{group__Motion__module_ga459bafaee78fdbca28b6f8fdb06c0a93}{lerp}} (double time, Vector3d p1, Vector3d p2)
+\begin{DoxyCompactList}\small\item\em To linearly interpolate two vectors in the space. \end{DoxyCompactList}\item 
+Quaterniond \mbox{\hyperlink{group__Motion__module_gac1ed14e00dbcf1a1d452a0c8b2210dd3}{myslerp}} (double time, Quaterniond q1, Quaterniond q2)
+\begin{DoxyCompactList}\small\item\em To spherically interpolate two quaternions. \end{DoxyCompactList}\item 
+Matrix6d \mbox{\hyperlink{group__Motion__module_gaffdc0a7709e59a29a720da8e3a857fc2}{compute\+Jacobian\+Cross}} (Vector6d th)
+\begin{DoxyCompactList}\small\item\em Function to compute Jacobian matrix using cross product. \end{DoxyCompactList}\item 
+Path \mbox{\hyperlink{group__Motion__module_gadf60eced1d58b150bec2504b386a3e31}{differential\+\_\+inverse\+\_\+kin\+\_\+quaternions}} (Vector8d mr, Vector3d f\+\_\+p, Quaterniond f\+\_\+q)
+\begin{DoxyCompactList}\small\item\em To compute the path the robot has to follow to reach the final point, which is expressed using position and quaternion for orientation. \end{DoxyCompactList}\item 
+Path \mbox{\hyperlink{group__Motion__module_ga60be8ff38c2f589bdb17bc31799bbe28}{insert\+\_\+new\+\_\+path\+\_\+instance}} (Path p, Vector6d js, Vector2d gs)
+\begin{DoxyCompactList}\small\item\em To insert a new path instance each time it\textquotesingle{}s computed using inverse differential kinematics. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__Motion__module_gaef4180a824a150c0d584bccc407662b9}\label{group__Motion__module_gaef4180a824a150c0d584bccc407662b9}} 
+const Vector\+Xd \mbox{\hyperlink{group__Motion__module_gaef4180a824a150c0d584bccc407662b9}{A}} = (Vector\+Xd(6) $<$$<$ 0, -\/0.\+425, -\/0.\+3922, 0, 0, 0).finished()
+\begin{DoxyCompactList}\small\item\em Vector of A distance of standard U\+R5. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__Motion__module_ga0cb058a665ce5cc88412e5535c612798}\label{group__Motion__module_ga0cb058a665ce5cc88412e5535c612798}} 
+const Vector\+Xd \mbox{\hyperlink{group__Motion__module_ga0cb058a665ce5cc88412e5535c612798}{D}} = (Vector\+Xd(6) $<$$<$ 0.\+1625, 0, 0, 0.\+1333, 0.\+0997, 0.\+0996).finished()
+\begin{DoxyCompactList}\small\item\em Vector of D distance of standard U\+R5. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__Motion__module_ga4c14edd5555c2a92158c249fecc64bb4}\label{group__Motion__module_ga4c14edd5555c2a92158c249fecc64bb4}} 
+const Vector\+Xd \mbox{\hyperlink{group__Motion__module_ga4c14edd5555c2a92158c249fecc64bb4}{A\+L\+P\+HA}} = (Vector\+Xd(6) $<$$<$ M\+\_\+\+PI / 2, 0, 0, M\+\_\+\+PI / 2, -\/M\+\_\+\+PI / 2, 0).finished()
+\begin{DoxyCompactList}\small\item\em Vector of A\+L\+P\+HA angles of standard U\+R5. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__Motion__module_ga28343fd4eea11e1d7ee37435114dfc5a}\label{group__Motion__module_ga28343fd4eea11e1d7ee37435114dfc5a}} 
+const Vector\+Xd {\bfseries a} = (Vector\+Xd(6) $<$$<$ 0, -\/0.\+425, -\/0.\+3922, 0, 0, 0).finished()
+\item 
+\mbox{\Hypertarget{group__Motion__module_ga31567eb6524a8b0a8420b942431ada38}\label{group__Motion__module_ga31567eb6524a8b0a8420b942431ada38}} 
+const Vector\+Xd {\bfseries d} = (Vector\+Xd(6) $<$$<$ 0.\+1625, 0, 0, 0.\+1333, 0.\+0997, 0.\+0996).finished()
+\item 
+\mbox{\Hypertarget{group__Motion__module_gac727100dc0a800e4b95d14bba3d100ae}\label{group__Motion__module_gac727100dc0a800e4b95d14bba3d100ae}} 
+const Vector\+Xd {\bfseries alpha} = (Vector\+Xd(6) $<$$<$ M\+\_\+\+PI / 2, 0, 0, M\+\_\+\+PI / 2, -\/M\+\_\+\+PI / 2, 0).finished()
+\item 
+\mbox{\Hypertarget{group__Motion__module_ga4d2852f394c94e7eaac02e3c5b393654}\label{group__Motion__module_ga4d2852f394c94e7eaac02e3c5b393654}} 
+const double \mbox{\hyperlink{group__Motion__module_ga4d2852f394c94e7eaac02e3c5b393654}{dt}} = 0.\+1
+\begin{DoxyCompactList}\small\item\em Time delta used in a single path unit. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__Motion__module_ga948d1209d4185ebb96a27ace68eb47d5}\label{group__Motion__module_ga948d1209d4185ebb96a27ace68eb47d5}} 
+const double \mbox{\hyperlink{group__Motion__module_ga948d1209d4185ebb96a27ace68eb47d5}{path\+\_\+dt}} = 20.\+0
+\begin{DoxyCompactList}\small\item\em Time duration of a single path unit. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__Motion__module_ga95d6d8f2c908c0a1d454544cea067ba9}\label{group__Motion__module_ga95d6d8f2c908c0a1d454544cea067ba9}} 
+\index{MOTION@{MOTION}!adjust\_gripper@{adjust\_gripper}}
+\index{adjust\_gripper@{adjust\_gripper}!MOTION@{MOTION}}
+\doxysubsubsection{\texorpdfstring{adjust\_gripper()}{adjust\_gripper()}}
+{\footnotesize\ttfamily Matrix4d adjust\+\_\+gripper (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Compute transformation matrix to align gripper to world frame. 
+
+The transformation is given by a rotation of P\+I/2 around z axis. \begin{DoxyReturn}{Returns}
+The transformation matrix, it\textquotesingle{}s a 4x4 matrix. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__Motion__module_gab318d3ba263e0b9f0632088ffcb43636}\label{group__Motion__module_gab318d3ba263e0b9f0632088ffcb43636}} 
+\index{MOTION@{MOTION}!almostZero@{almostZero}}
+\index{almostZero@{almostZero}!MOTION@{MOTION}}
+\doxysubsubsection{\texorpdfstring{almostZero()}{almostZero()}}
+{\footnotesize\ttfamily bool almost\+Zero (\begin{DoxyParamCaption}\item[{double}]{x }\end{DoxyParamCaption})}
+
+
+
+Function to check if a number is very close to zero. 
+
+If the abs(number) is minor than 10$^\wedge$(-\/7), then it is approximated to 0-\/. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em x} & Number whose value needs to be checked. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the number is minor than 10$^\wedge$(-\/7), false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__Motion__module_ga07c77fb44920c9747dfd073917b0c13d}\label{group__Motion__module_ga07c77fb44920c9747dfd073917b0c13d}} 
+\index{MOTION@{MOTION}!base\_to\_world@{base\_to\_world}}
+\index{base\_to\_world@{base\_to\_world}!MOTION@{MOTION}}
+\doxysubsubsection{\texorpdfstring{base\_to\_world()}{base\_to\_world()}}
+{\footnotesize\ttfamily Matrix4d base\+\_\+to\+\_\+world (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Compute transformation matrix from base to world frame. 
+
+The transformation is given by a rotation of PI around x axis and a traslation of (0.\+5, 0.\+35, 1.\+75). \begin{DoxyReturn}{Returns}
+The transformation matrix, it\textquotesingle{}s a 4x4 matrix. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__Motion__module_ga6687cd04fcd36f963ed76ffbff7f723c}\label{group__Motion__module_ga6687cd04fcd36f963ed76ffbff7f723c}} 
+\index{MOTION@{MOTION}!computeJacobian@{computeJacobian}}
+\index{computeJacobian@{computeJacobian}!MOTION@{MOTION}}
+\doxysubsubsection{\texorpdfstring{computeJacobian()}{computeJacobian()}}
+{\footnotesize\ttfamily Matrix6d compute\+Jacobian (\begin{DoxyParamCaption}\item[{Vector6d}]{th }\end{DoxyParamCaption})}
+
+
+
+Function to compute Jacobian matrix. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em th} & are the joint variables. Since we have six joints, th will be a 6 dimensions vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the Jacobian matrix. It\textquotesingle{}s a 6x6 matrix. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__Motion__module_gaffdc0a7709e59a29a720da8e3a857fc2}\label{group__Motion__module_gaffdc0a7709e59a29a720da8e3a857fc2}} 
+\index{MOTION@{MOTION}!computeJacobianCross@{computeJacobianCross}}
+\index{computeJacobianCross@{computeJacobianCross}!MOTION@{MOTION}}
+\doxysubsubsection{\texorpdfstring{computeJacobianCross()}{computeJacobianCross()}}
+{\footnotesize\ttfamily Matrix6d compute\+Jacobian\+Cross (\begin{DoxyParamCaption}\item[{Vector6d}]{th }\end{DoxyParamCaption})}
+
+
+
+Function to compute Jacobian matrix using cross product. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em th} & are the joint variables. Since we have six joints, th will be a 6 dimensions vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the Jacobian matrix. It\textquotesingle{}s a 6x6 matrix. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__Motion__module_gacc3681139836e3c6674a86c3a45fd2d1}\label{group__Motion__module_gacc3681139836e3c6674a86c3a45fd2d1}} 
+\index{MOTION@{MOTION}!computeTransformationMatrix@{computeTransformationMatrix}}
+\index{computeTransformationMatrix@{computeTransformationMatrix}!MOTION@{MOTION}}
+\doxysubsubsection{\texorpdfstring{computeTransformationMatrix()}{computeTransformationMatrix()}}
+{\footnotesize\ttfamily Matrix4d compute\+Transformation\+Matrix (\begin{DoxyParamCaption}\item[{double}]{th,  }\item[{double}]{alpha,  }\item[{double}]{distance,  }\item[{double}]{a }\end{DoxyParamCaption})}
+
+
+
+Compute transformation matrix from i to j frame. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em th} & non-\/constant value. It\textquotesingle{}s the angle about previous z from old x to new x. \\
+\hline
+\mbox{\texttt{ in}}  & {\em alpha} & constant value. It\textquotesingle{}s the angle about common normal, from old z axis to new z axis. \\
+\hline
+\mbox{\texttt{ in}}  & {\em distance} & constant value. Offset along previous z to the common normal \\
+\hline
+\mbox{\texttt{ in}}  & {\em a} & constant value. It\textquotesingle{}s the length of the common normal. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The transformation matrix from joint i to joint j. It\textquotesingle{}s a 4x4 matrix. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__Motion__module_gadf60eced1d58b150bec2504b386a3e31}\label{group__Motion__module_gadf60eced1d58b150bec2504b386a3e31}} 
+\index{MOTION@{MOTION}!differential\_inverse\_kin\_quaternions@{differential\_inverse\_kin\_quaternions}}
+\index{differential\_inverse\_kin\_quaternions@{differential\_inverse\_kin\_quaternions}!MOTION@{MOTION}}
+\doxysubsubsection{\texorpdfstring{differential\_inverse\_kin\_quaternions()}{differential\_inverse\_kin\_quaternions()}}
+{\footnotesize\ttfamily Path differential\+\_\+inverse\+\_\+kin\+\_\+quaternions (\begin{DoxyParamCaption}\item[{Vector8d}]{mr,  }\item[{Vector3d}]{f\+\_\+p,  }\item[{Quaterniond}]{f\+\_\+q }\end{DoxyParamCaption})}
+
+
+
+To compute the path the robot has to follow to reach the final point, which is expressed using position and quaternion for orientation. 
+
+The computation is performed by firstly adding the starting position to the path and then the following ones are added with an increment of dt=0.\+1s. Joint velocities are computed using the Damped Least Square (D\+LS) Inverse, to avoid problems in inverting differential kinematics near a singularities. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em mr} & are the theta angles of joints plus 2 variables to express gripper state. \\
+\hline
+\mbox{\texttt{ in}}  & {\em f\+\_\+p} & first quaternion. \\
+\hline
+\mbox{\texttt{ in}}  & {\em q2} & second quaternion. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a matrix with 8 columns and a variable number of rows. 
+\end{DoxyReturn}
+qerr\+\_\+k = Kq $\ast$ qerr\+\_\+k.\+coeffs();
+
+Quaterniond total\+\_\+q; total\+\_\+q = qv\+\_\+k $\ast$ qerr\+\_\+k;\mbox{\Hypertarget{group__Motion__module_ga4ac576bbf78dfcd5d3b51d0711bee5b4}\label{group__Motion__module_ga4ac576bbf78dfcd5d3b51d0711bee5b4}} 
+\index{MOTION@{MOTION}!directKin@{directKin}}
+\index{directKin@{directKin}!MOTION@{MOTION}}
+\doxysubsubsection{\texorpdfstring{directKin()}{directKin()}}
+{\footnotesize\ttfamily Matrix4d direct\+Kin (\begin{DoxyParamCaption}\item[{Vector\+Xd}]{Th }\end{DoxyParamCaption})}
+
+
+
+Function to compute direct kinematics matrix. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Th} & are the joint variables. Since we have six joints, th will be a 6 dimensions vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the direct kinematics matrix. It\textquotesingle{}s a 4x4 matrix. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__Motion__module_ga60be8ff38c2f589bdb17bc31799bbe28}\label{group__Motion__module_ga60be8ff38c2f589bdb17bc31799bbe28}} 
+\index{MOTION@{MOTION}!insert\_new\_path\_instance@{insert\_new\_path\_instance}}
+\index{insert\_new\_path\_instance@{insert\_new\_path\_instance}!MOTION@{MOTION}}
+\doxysubsubsection{\texorpdfstring{insert\_new\_path\_instance()}{insert\_new\_path\_instance()}}
+{\footnotesize\ttfamily Path insert\+\_\+new\+\_\+path\+\_\+instance (\begin{DoxyParamCaption}\item[{Path}]{p,  }\item[{Vector6d}]{js,  }\item[{Vector2d}]{gs }\end{DoxyParamCaption})}
+
+
+
+To insert a new path instance each time it\textquotesingle{}s computed using inverse differential kinematics. 
+
+Path is a matrix with dynamic-\/rows-\/number, hence each time a path instance (a new set of joint variables) is compute in inverse differential, it\textquotesingle{}s added to path. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em p} & is the path the robot has to follow. It consists in a matrix with 8 columns (6 for the joints + 2 for the gripper) and a dynamic number of rows. \\
+\hline
+\mbox{\texttt{ in}}  & {\em js} & joint variables. \\
+\hline
+\mbox{\texttt{ in}}  & {\em gs} & gripper state. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a matrix with 8 columns and a variable number of rows. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__Motion__module_ga4a58537822532c937c58d0d20d8819ff}\label{group__Motion__module_ga4a58537822532c937c58d0d20d8819ff}} 
+\index{MOTION@{MOTION}!inverseKin@{inverseKin}}
+\index{inverseKin@{inverseKin}!MOTION@{MOTION}}
+\doxysubsubsection{\texorpdfstring{inverseKin()}{inverseKin()}}
+{\footnotesize\ttfamily Matrix$<$ double, 6, 8 $>$ inverse\+Kin (\begin{DoxyParamCaption}\item[{Vector3d}]{p60,  }\item[{Matrix3d}]{R60,  }\item[{double}]{scale\+Factor }\end{DoxyParamCaption})}
+
+
+
+Function to compute inverse matrix. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em p60} & are the joint variables. Since we have six joints, th will be a 6 dimensions vector. \\
+\hline
+\mbox{\texttt{ in}}  & {\em R60} & is the rotational matrix, extracted from direct kinematics matrix. \\
+\hline
+\mbox{\texttt{ in}}  & {\em scale\+Factor} & scale factor. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the possible joint variables, in a matrix form, for a giving position and orientation given in the direct kinematics matrix. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__Motion__module_ga459bafaee78fdbca28b6f8fdb06c0a93}\label{group__Motion__module_ga459bafaee78fdbca28b6f8fdb06c0a93}} 
+\index{MOTION@{MOTION}!lerp@{lerp}}
+\index{lerp@{lerp}!MOTION@{MOTION}}
+\doxysubsubsection{\texorpdfstring{lerp()}{lerp()}}
+{\footnotesize\ttfamily Vector3d lerp (\begin{DoxyParamCaption}\item[{double}]{time,  }\item[{Vector3d}]{p1,  }\item[{Vector3d}]{p2 }\end{DoxyParamCaption})}
+
+
+
+To linearly interpolate two vectors in the space. 
+
+We find an \char`\"{}interpolated\char`\"{} point, since it is in the space, it will be a 3D vector. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em time} & is the time between the two position. \\
+\hline
+\mbox{\texttt{ in}}  & {\em p1} & first point. \\
+\hline
+\mbox{\texttt{ in}}  & {\em p2} & second pint. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the interpolated 3D point. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__Motion__module_gac1ed14e00dbcf1a1d452a0c8b2210dd3}\label{group__Motion__module_gac1ed14e00dbcf1a1d452a0c8b2210dd3}} 
+\index{MOTION@{MOTION}!myslerp@{myslerp}}
+\index{myslerp@{myslerp}!MOTION@{MOTION}}
+\doxysubsubsection{\texorpdfstring{myslerp()}{myslerp()}}
+{\footnotesize\ttfamily Quaterniond myslerp (\begin{DoxyParamCaption}\item[{double}]{time,  }\item[{Quaterniond}]{q1,  }\item[{Quaterniond}]{q2 }\end{DoxyParamCaption})}
+
+
+
+To spherically interpolate two quaternions. 
+
+We find an \char`\"{}interpolated\char`\"{} quaternion. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em time} & is the time between the two quaternions. \\
+\hline
+\mbox{\texttt{ in}}  & {\em q1} & first quaternion. \\
+\hline
+\mbox{\texttt{ in}}  & {\em q2} & second quaternion. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the interpolated quaternion. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__Motion__module_ga8d82b67c2d95fb8bd7f0cb397faa6440}\label{group__Motion__module_ga8d82b67c2d95fb8bd7f0cb397faa6440}} 
+\index{MOTION@{MOTION}!print\_eigen@{print\_eigen}}
+\index{print\_eigen@{print\_eigen}!MOTION@{MOTION}}
+\doxysubsubsection{\texorpdfstring{print\_eigen()}{print\_eigen()}}
+{\footnotesize\ttfamily int print\+\_\+eigen (\begin{DoxyParamCaption}\item[{string}]{str,  }\item[{Matrix\+Xd}]{m }\end{DoxyParamCaption})}
+
+
+
+Function to print the matrix. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em str} & String to identify the matrix(label). \\
+\hline
+\mbox{\texttt{ in}}  & {\em m} & matrix to print. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the number is minor than 10$^\wedge$(-\/7), false otherwise. 
+\end{DoxyReturn}

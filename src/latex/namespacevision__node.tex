@@ -1,0 +1,55 @@
+\hypertarget{namespacevision__node}{}\doxysection{vision\+\_\+node Namespace Reference}
+\label{namespacevision__node}\index{vision\_node@{vision\_node}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacevision__node_a0b9f60b06476d67faa82484456895c16}{get\+\_\+bounding\+\_\+boxes\+\_\+handler}} (req)
+\begin{DoxyCompactList}\small\item\em handler of get\+\_\+bounding\+\_\+boxes service, type ur5\+\_\+lego.\+srv.\+Get\+Bounding\+Boxes It reads the image from the camera and calls the make\+\_\+prediction() function on it to detect the bounding boxes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespacevision__node_ac33a5714c57d67967848f451d81c761e}\label{namespacevision__node_ac33a5714c57d67967848f451d81c761e}} 
+{\bfseries cwd} = os.\+getcwd()
+\item 
+\mbox{\Hypertarget{namespacevision__node_a98afb37c45fa4e8036d9f2a03e0164cf}\label{namespacevision__node_a98afb37c45fa4e8036d9f2a03e0164cf}} 
+string {\bfseries info\+\_\+name} = \char`\"{} \mbox{[} vision\+\_\+node \mbox{]}\+:\char`\"{}
+\item 
+\mbox{\Hypertarget{namespacevision__node_a4138d9388f29ec6c9aa2509c270e9f6d}\label{namespacevision__node_a4138d9388f29ec6c9aa2509c270e9f6d}} 
+bool {\bfseries debug\+\_\+mode} = False
+\item 
+\mbox{\Hypertarget{namespacevision__node_abfaf07482b77e6f81401230d9babd5cb}\label{namespacevision__node_abfaf07482b77e6f81401230d9babd5cb}} 
+string {\bfseries path\+\_\+to\+\_\+image} = \char`\"{}/home/alex/ros\+\_\+ws/src/ur5\+\_\+lego/img/zed.\+jpg\char`\"{}
+\item 
+\mbox{\Hypertarget{namespacevision__node_ac1a89b60dc738de253fd00df981e7c1c}\label{namespacevision__node_ac1a89b60dc738de253fd00df981e7c1c}} 
+{\bfseries service} = ros.\+Service(\char`\"{}get\+\_\+bounding\+\_\+boxes\char`\"{}, Get\+Bounding\+Boxes, \mbox{\hyperlink{namespacevision__node_a0b9f60b06476d67faa82484456895c16}{get\+\_\+bounding\+\_\+boxes\+\_\+handler}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}@file vision_node.py
+@brief Ros node that exposes a get_bounding_boxes service of type ur5_lego.srv.GetBoundingBoxes
+It uses a YOLOv8 model from mega_blocks_detector_project submodule to extract the bounding boxes from the camera image.
+@date   04/01/2024
+@author Alex Pegoraro
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacevision__node_a0b9f60b06476d67faa82484456895c16}\label{namespacevision__node_a0b9f60b06476d67faa82484456895c16}} 
+\index{vision\_node@{vision\_node}!get\_bounding\_boxes\_handler@{get\_bounding\_boxes\_handler}}
+\index{get\_bounding\_boxes\_handler@{get\_bounding\_boxes\_handler}!vision\_node@{vision\_node}}
+\doxysubsubsection{\texorpdfstring{get\_bounding\_boxes\_handler()}{get\_bounding\_boxes\_handler()}}
+{\footnotesize\ttfamily def vision\+\_\+node.\+get\+\_\+bounding\+\_\+boxes\+\_\+handler (\begin{DoxyParamCaption}\item[{}]{req }\end{DoxyParamCaption})}
+
+
+
+handler of get\+\_\+bounding\+\_\+boxes service, type ur5\+\_\+lego.\+srv.\+Get\+Bounding\+Boxes It reads the image from the camera and calls the make\+\_\+prediction() function on it to detect the bounding boxes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & empty \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+res\+: the list of bounding boxes 
+\end{DoxyReturn}

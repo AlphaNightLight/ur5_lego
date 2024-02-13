@@ -1,0 +1,147 @@
+\hypertarget{task__planner_2motion__planner_8cpp}{}\doxysection{task\+\_\+planner/motion\+\_\+planner.cpp File Reference}
+\label{task__planner_2motion__planner_8cpp}\index{task\_planner/motion\_planner.cpp@{task\_planner/motion\_planner.cpp}}
+
+
+Ros node that exposes a move\+\_\+block service of type ur5\+\_\+lego\+::\+Move\+Block. Through the aid of the motion\+\_\+planner\+\_\+ur5 submodule and the robot\+\_\+controller node, it moves the robot to grip a block in an initial pose and put it in a final one.  
+
+
+{\ttfamily \#include \char`\"{}ros/ros.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ur5\+\_\+lego/\+Move\+Block.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ur5\+\_\+lego/\+Target\+Pose.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}sensor\+\_\+msgs/\+Joint\+State.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ur5\+\_\+lego/\+Move\+Robot.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}std\+\_\+msgs/\+Float64\+Multi\+Array.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ur5\+\_\+lego/motion\+\_\+planner.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../motion\+\_\+planner\+\_\+ur5/motion\+\_\+planner.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../motion\+\_\+planner\+\_\+ur5/motion\+\_\+planner.\+cpp\char`\"{}}\newline
+{\ttfamily \#include $<$eigen3/\+Eigen/\+Core$>$}\newline
+{\ttfamily \#include $<$eigen3/\+Eigen/\+Dense$>$}\newline
+{\ttfamily \#include $<$eigen3/\+Eigen/\+Geometry$>$}\newline
+Include dependency graph for motion\+\_\+planner.\+cpp\+:
+% FIG 0
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{task__planner_2motion__planner_8cpp_a961746f56d6699a766026e1d5374fc42}\label{task__planner_2motion__planner_8cpp_a961746f56d6699a766026e1d5374fc42}} 
+\#define {\bfseries Z\+\_\+\+G\+R\+IP}~0.\+15
+\item 
+\mbox{\Hypertarget{task__planner_2motion__planner_8cpp_ad4119e8df441aaa0c561ff3523687d6b}\label{task__planner_2motion__planner_8cpp_ad4119e8df441aaa0c561ff3523687d6b}} 
+\#define {\bfseries Z\+\_\+\+A\+P\+P\+R\+O\+A\+CH}~0.\+10
+\item 
+\mbox{\Hypertarget{task__planner_2motion__planner_8cpp_a4c790b527491fe1eb4e543501b709836}\label{task__planner_2motion__planner_8cpp_a4c790b527491fe1eb4e543501b709836}} 
+\#define {\bfseries V\+I\+A\+\_\+\+P\+O\+I\+N\+S\+\_\+\+N\+U\+M\+B\+ER}~6
+\item 
+\mbox{\Hypertarget{task__planner_2motion__planner_8cpp_a2c0d0ba99e3872b6d1e653d6dcad9031}\label{task__planner_2motion__planner_8cpp_a2c0d0ba99e3872b6d1e653d6dcad9031}} 
+\#define {\bfseries G\+R\+I\+P\+P\+E\+R\+\_\+\+T\+Y\+PE}~\char`\"{}soft\+\_\+2\char`\"{}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Vector8d \mbox{\hyperlink{task__planner_2motion__planner_8cpp_a29f5639d71e1b0349dc960449ec12a08}{get\+\_\+actual\+\_\+joints}} ()
+\begin{DoxyCompactList}\small\item\em a function to retrieve the actual joint configuration of the robot. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{task__planner_2motion__planner_8cpp_ad227f3d10e359abf9692681af3264989}{set\+\_\+gripper\+\_\+joints}} (std\+::vector$<$ double $>$ \&desired\+\_\+joints, double diameter, std\+::string gripper\+\_\+type)
+\begin{DoxyCompactList}\small\item\em given a joint state, it modifies the gripper joints to have a desire diameter \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{task__planner_2motion__planner_8cpp_a2e19e84d8e1de670fe3800e51f8f8d06}{move\+\_\+block\+\_\+handler}} (ur5\+\_\+lego\+::\+Move\+Block\+::\+Request \&req, ur5\+\_\+lego\+::\+Move\+Block\+::\+Response \&res)
+\begin{DoxyCompactList}\small\item\em handler of move\+\_\+robot service, type ur5\+\_\+lego\+::\+Move\+Block. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{task__planner_2motion__planner_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\begin{DoxyCompactList}\small\item\em Main code of motion\+\_\+planner. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{task__planner_2motion__planner_8cpp_a1f0e2fe766d3224721250e4a7ebec309}\label{task__planner_2motion__planner_8cpp_a1f0e2fe766d3224721250e4a7ebec309}} 
+char {\bfseries info\+\_\+name} \mbox{[}$\,$\mbox{]} = \char`\"{} \mbox{[} motion\+\_\+planner \mbox{]}\+:\char`\"{}
+\item 
+\mbox{\Hypertarget{task__planner_2motion__planner_8cpp_aa021995764a0c77f628e3411497239cc}\label{task__planner_2motion__planner_8cpp_aa021995764a0c77f628e3411497239cc}} 
+bool {\bfseries debug\+\_\+mode} = false
+\item 
+\mbox{\Hypertarget{task__planner_2motion__planner_8cpp_ae3d9f072799fa54e591c7b52ea2384d2}\label{task__planner_2motion__planner_8cpp_ae3d9f072799fa54e591c7b52ea2384d2}} 
+int {\bfseries J\+O\+I\+N\+T\+\_\+\+S\+I\+ZE} = 8
+\item 
+\mbox{\Hypertarget{task__planner_2motion__planner_8cpp_ad0231bbbeb28c6bbc6f6a4127aa436eb}\label{task__planner_2motion__planner_8cpp_ad0231bbbeb28c6bbc6f6a4127aa436eb}} 
+ros\+::\+Service\+Client {\bfseries robot\+\_\+controller}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Ros node that exposes a move\+\_\+block service of type ur5\+\_\+lego\+::\+Move\+Block. Through the aid of the motion\+\_\+planner\+\_\+ur5 submodule and the robot\+\_\+controller node, it moves the robot to grip a block in an initial pose and put it in a final one. 
+
+\begin{DoxyDate}{Date}
+04/01/2024 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Alex Pegoraro 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{task__planner_2motion__planner_8cpp_a29f5639d71e1b0349dc960449ec12a08}\label{task__planner_2motion__planner_8cpp_a29f5639d71e1b0349dc960449ec12a08}} 
+\index{motion\_planner.cpp@{motion\_planner.cpp}!get\_actual\_joints@{get\_actual\_joints}}
+\index{get\_actual\_joints@{get\_actual\_joints}!motion\_planner.cpp@{motion\_planner.cpp}}
+\doxysubsubsection{\texorpdfstring{get\_actual\_joints()}{get\_actual\_joints()}}
+{\footnotesize\ttfamily Vector8d get\+\_\+actual\+\_\+joints (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+a function to retrieve the actual joint configuration of the robot. 
+
+It reads the /ur5/joint\+\_\+states topic by ur5\+\_\+generic.\+py \begin{DoxyReturn}{Returns}
+a Vector8d containing the actual joint state of the robot. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{task__planner_2motion__planner_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{task__planner_2motion__planner_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{motion\_planner.cpp@{motion\_planner.cpp}!main@{main}}
+\index{main@{main}!motion\_planner.cpp@{motion\_planner.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+
+
+Main code of motion\+\_\+planner. 
+
+It moves the robot into an homing postion, then advertises a move\+\_\+block service of type ur5\+\_\+lego\+::\+Move\+Block, with handles \mbox{\hyperlink{task__planner_2motion__planner_8cpp_a2e19e84d8e1de670fe3800e51f8f8d06}{move\+\_\+block\+\_\+handler()}}. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em int} & argc, char $\ast$$\ast$argv\+: classical command line arguments. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, 1 if something went wrong. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{task__planner_2motion__planner_8cpp_a2e19e84d8e1de670fe3800e51f8f8d06}\label{task__planner_2motion__planner_8cpp_a2e19e84d8e1de670fe3800e51f8f8d06}} 
+\index{motion\_planner.cpp@{motion\_planner.cpp}!move\_block\_handler@{move\_block\_handler}}
+\index{move\_block\_handler@{move\_block\_handler}!motion\_planner.cpp@{motion\_planner.cpp}}
+\doxysubsubsection{\texorpdfstring{move\_block\_handler()}{move\_block\_handler()}}
+{\footnotesize\ttfamily bool move\+\_\+block\+\_\+handler (\begin{DoxyParamCaption}\item[{ur5\+\_\+lego\+::\+Move\+Block\+::\+Request \&}]{req,  }\item[{ur5\+\_\+lego\+::\+Move\+Block\+::\+Response \&}]{res }\end{DoxyParamCaption})}
+
+
+
+handler of move\+\_\+robot service, type ur5\+\_\+lego\+::\+Move\+Block. 
+
+It calcultaes the necessary via points and uses them to design a path to grip the block. The joints necessary to accomplish such a path are then sent to robot\+\_\+controller node. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ur5\+\_\+lego\+::\+Move\+Block\+::\+Request} & \&req\+: the block actual position and the block desired one. \\
+\hline
+\mbox{\texttt{ out}}  & {\em ur5\+\_\+lego\+::\+Move\+Block\+::\+Response} & \&res\+: true if success, false if something went wrong. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if success, false if something went wrong. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{task__planner_2motion__planner_8cpp_ad227f3d10e359abf9692681af3264989}\label{task__planner_2motion__planner_8cpp_ad227f3d10e359abf9692681af3264989}} 
+\index{motion\_planner.cpp@{motion\_planner.cpp}!set\_gripper\_joints@{set\_gripper\_joints}}
+\index{set\_gripper\_joints@{set\_gripper\_joints}!motion\_planner.cpp@{motion\_planner.cpp}}
+\doxysubsubsection{\texorpdfstring{set\_gripper\_joints()}{set\_gripper\_joints()}}
+{\footnotesize\ttfamily void set\+\_\+gripper\+\_\+joints (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$ \&}]{desired\+\_\+joints,  }\item[{double}]{diameter,  }\item[{std\+::string}]{gripper\+\_\+type }\end{DoxyParamCaption})}
+
+
+
+given a joint state, it modifies the gripper joints to have a desire diameter 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em double} & diameter\+: the desired gripper diameter, std\+::string gripper\+\_\+type\+: the kind of gripper used. \\
+\hline
+\mbox{\texttt{ out}}  & {\em std\+::vector$<$double$>$} & \&desired\+\_\+joints\+: the joints with the gripper adjusted to have the desired diameter. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}

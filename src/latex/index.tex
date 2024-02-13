@@ -1,0 +1,34 @@
+\hypertarget{index_intro}{}\doxysection{Introduction}\label{index_intro}
+Welcome to documentation of the ur5\+\_\+lego project, this contains all the necessary functions, variables and instructions for the use and the installation.\hypertarget{index_features}{}\doxysection{Features}\label{index_features}
+The following script offers the following functionality
+\begin{DoxyItemize}
+\item modify Sabe\textquotesingle{}s Dataset and adapt it to Y\+O\+LO format
+\item fine-\/tuning of pre-\/trained Y\+O\+LO v8 model based on custom datasets
+\item predictions based on best.\+pt model
+\end{DoxyItemize}\hypertarget{index_installation}{}\doxysection{Installation}\label{index_installation}
+Per installare il Progetto Python, seguire i passaggi seguenti\+:
+\begin{DoxyItemize}
+\item Step 1\+: pip install ultralytics
+\end{DoxyItemize}\hypertarget{index_structure}{}\doxysection{Code structure}\label{index_structure}
+The structure of the CV project is the following\+:
+\begin{DoxyItemize}
+\item {\ttfamily mega\+\_\+blocks\+\_\+project/}\+: root path.
+\begin{DoxyItemize}
+\item {\ttfamily folder\+\_\+structure.\+py}\+: create necessary folder
+\item {\ttfamily J\+S\+O\+Nto\+Y\+O\+L\+O.\+py}\+: convert dataset
+\item {\ttfamily split\+\_\+dataset.\+py}\+: split images and labels into sub-\/folders
+\item {\ttfamily augmentation.\+py}\+: augment images (resize, light and bw filters)
+\item {\ttfamily fine\+\_\+tuning.\+py}\+: adjust weights of the model
+\item {\ttfamily custom\+\_\+model.\+py}\+: make predictions
+\item {\ttfamily custom\+\_\+model\+\_\+ros.\+py}\+: same as the previous, but adapt for R\+OS usage
+\item {\ttfamily resume\+\_\+training.\+py}\+: script to resume blocked training
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{index_reference}{}\doxysection{References}\label{index_reference}
+
+\begin{DoxyItemize}
+\item \href{https://docs.python.org/3/}{\texttt{ Python Doc}}
+\item \href{https://www.doxygen.nl/index.html}{\texttt{ Doxygen Doc}}
+\item \href{https://docs.ultralytics.com}{\texttt{ Ultralytics Doc}}
+\end{DoxyItemize}\hypertarget{index_license}{}\doxysection{Licence}\label{index_license}
+This project has no special licence\hypertarget{index_contact}{}\doxysection{Contact}\label{index_contact}
+For questions, bugs or suggestions, please refer to Alberto at \href{mailto:alberto.dalbosco@studenti.unitn.it}{\texttt{ alberto.\+dalbosco@studenti.\+unitn.\+it}} 

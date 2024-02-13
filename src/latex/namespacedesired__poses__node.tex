@@ -1,0 +1,49 @@
+\hypertarget{namespacedesired__poses__node}{}\doxysection{desired\+\_\+poses\+\_\+node Namespace Reference}
+\label{namespacedesired__poses__node}\index{desired\_poses\_node@{desired\_poses\_node}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacedesired__poses__node_a0d3e30835c8197634acb762323db8ef1}{get\+\_\+desired\+\_\+poses\+\_\+handler}} (req)
+\begin{DoxyCompactList}\small\item\em handler of get\+\_\+desired\+\_\+poses service, type ur5\+\_\+lego.\+srv.\+Get\+Desired\+Poses It adjusts the values imported from desired\+\_\+poses\+\_\+params.\+py to convert them from table frame to world frame, and then returns them to the caller. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespacedesired__poses__node_aec017b2e09b1ca428a89036a8611167b}\label{namespacedesired__poses__node_aec017b2e09b1ca428a89036a8611167b}} 
+string {\bfseries info\+\_\+name} = \char`\"{}\mbox{[}desired\+\_\+poses\+\_\+node\mbox{]}\+:\char`\"{}
+\item 
+\mbox{\Hypertarget{namespacedesired__poses__node_af0f9fbe9a84b5e34c22a4eda900dda7c}\label{namespacedesired__poses__node_af0f9fbe9a84b5e34c22a4eda900dda7c}} 
+bool {\bfseries debug\+\_\+mode} = False
+\item 
+\mbox{\Hypertarget{namespacedesired__poses__node_a06bc46dce2d873cb1665d218e5c283fa}\label{namespacedesired__poses__node_a06bc46dce2d873cb1665d218e5c283fa}} 
+{\bfseries service} = ros.\+Service(\char`\"{}get\+\_\+desired\+\_\+poses\char`\"{}, Get\+Desired\+Poses, \mbox{\hyperlink{namespacedesired__poses__node_a0d3e30835c8197634acb762323db8ef1}{get\+\_\+desired\+\_\+poses\+\_\+handler}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}@file desired_poses_node.py
+@brief Ros node that exposes a get_desired_poses service of type ur5_lego.srv.GetDesiredPoses
+It simply imports the desired_poses_params module that defines the desired position and orientation of blocks, and sents them to the caller.
+@date   04/01/2024
+@author Alex Pegoraro
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacedesired__poses__node_a0d3e30835c8197634acb762323db8ef1}\label{namespacedesired__poses__node_a0d3e30835c8197634acb762323db8ef1}} 
+\index{desired\_poses\_node@{desired\_poses\_node}!get\_desired\_poses\_handler@{get\_desired\_poses\_handler}}
+\index{get\_desired\_poses\_handler@{get\_desired\_poses\_handler}!desired\_poses\_node@{desired\_poses\_node}}
+\doxysubsubsection{\texorpdfstring{get\_desired\_poses\_handler()}{get\_desired\_poses\_handler()}}
+{\footnotesize\ttfamily def desired\+\_\+poses\+\_\+node.\+get\+\_\+desired\+\_\+poses\+\_\+handler (\begin{DoxyParamCaption}\item[{}]{req }\end{DoxyParamCaption})}
+
+
+
+handler of get\+\_\+desired\+\_\+poses service, type ur5\+\_\+lego.\+srv.\+Get\+Desired\+Poses It adjusts the values imported from desired\+\_\+poses\+\_\+params.\+py to convert them from table frame to world frame, and then returns them to the caller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & empty \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+res\+: the list of desired poses 
+\end{DoxyReturn}

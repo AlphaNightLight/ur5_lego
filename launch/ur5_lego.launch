@@ -1,7 +1,7 @@
 <launch>
   <param name="debug_mode" type="bool" value="true"/>
   <param name="joint_size" type="int" value="8"/>
-  <param name="max_angular_speed" type="double" value="0.31419526535"/> <!-- PI/10 rad/s -->
+  <param name="max_angular_speed" type="double" value="0.51419526535"/> <!-- PI/10 rad/s -->
   <param name="update_rate" type="double" value="1000.0"/>
 
   <group ns="ur5_lego">
